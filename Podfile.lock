@@ -1,6 +1,9 @@
 PODS:
   - HandyJSON (5.0.2)
   - PinLayout (1.9.4)
+  - SQLite.swift (0.13.0):
+    - SQLite.swift/standard (= 0.13.0)
+  - SQLite.swift/standard (0.13.0)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
     - SwifterSwift/CoreAnimation (= 5.2.0)
@@ -30,19 +33,22 @@ PODS:
 DEPENDENCIES:
   - HandyJSON (~> 5.0.2)
   - PinLayout (~> 1.9.3)
+  - SQLite.swift (~> 0.13.0)
   - SwifterSwift (~> 5.2.0)
 
 SPEC REPOS:
   trunk:
     - HandyJSON
     - PinLayout
+    - SQLite.swift
     - SwifterSwift
 
 SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   PinLayout: 0d73cf5bea456b8112429c984de377839b9ec34c
+  SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: c38b600205906a6c102a8008d886ff45a64e02fe
+PODFILE CHECKSUM: 5e703eae613c10b924b71f4396f601840e032f94
 
 COCOAPODS: 1.10.2

@@ -27,6 +27,7 @@
 		F0593B5B26EC946B00A735C8 /* FWCUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5A26EC946B00A735C8 /* FWCUtilities.swift */; };
 		F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */; };
 		F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */; };
+		F0CC3DA626ECE93F00F700F9 /* FWCChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC3DA526ECE93F00F700F9 /* FWCChatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F0593B5A26EC946B00A735C8 /* FWCUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCUtilities.swift; sourceTree = "<group>"; };
 		F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageListCell.swift; sourceTree = "<group>"; };
 		F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageModel.swift; sourceTree = "<group>"; };
+		F0CC3DA526ECE93F00F700F9 /* FWCChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCChatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */,
+				F0CC3DA526ECE93F00F700F9 /* FWCChatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
 				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,
 				F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */,
+				F0CC3DA626ECE93F00F700F9 /* FWCChatModel.swift in Sources */,
 				F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */,
 				F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */,
 				F0593B3D26EC833000A735C8 /* FWCBaseViewController.swift in Sources */,

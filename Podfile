@@ -7,5 +7,6 @@ target 'FakeWeChat' do
   pod 'SwifterSwift', '~> 5.2.0'
   pod 'PinLayout', '~> 1.9.3'
   pod 'HandyJSON', '~> 5.0.2'
+  pod 'SQLite.swift', '~> 0.13.0'
 
 end
