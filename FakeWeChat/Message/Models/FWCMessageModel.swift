@@ -16,15 +16,30 @@ enum FWCMessageContentType {
 }
 
 
-/// 最新的一条消息
+/// 消息
 class FWCMessageModel: HandyJSON {
-    var nickName : String?
+    // 消息id
+    var messageId: Int64 = 0
+    // 发送信息人id
+    var fromUid: Int64 = 0
+    // 接收信息人id
+    var receiverUid: Int64 = 0
+    // 发信人昵称
+    var fromUserName: String = ""
+    // 收信人昵称
+    var receiverUserName: String = ""
+    // 发信人头像
+    var fromUserAvatarUrl: String = ""
+    // 收信人头像
+    var receiverUserAvatarUrl: String = ""
+    // 消息类型
     var messageContentType : FWCMessageContentType = .Text
-    var chatId : String?  //每个人，群，公众帐号都有一个 uid，统一叫 chatId
-    // 最新消息
-    var latestMessage : String?
-    // 时间
-    var dateTime: String?
+    // 消息文本
+    var messageText: String = ""
+    // 消息时间
+    var messageTime: Int64 = 0
+    // 会话id，每组会话对应一个唯一id。多条消息的chatSessionId可能相同。
+    var chatSessionId: Int64 = 0
     
     required init() {}
 }

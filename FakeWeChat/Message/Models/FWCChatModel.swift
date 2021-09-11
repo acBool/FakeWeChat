@@ -23,6 +23,8 @@ class FWCChatModel: HandyJSON {
     var messageContentType : FWCMessageContentType = .Text
     // 会话id，每组会话对应一个唯一id
     var chatSessionId: Int64 = 0
+    // 最后一条消息时间
+    var lastMessageTime: Int64 = 0
     
     required init() {}
 }
