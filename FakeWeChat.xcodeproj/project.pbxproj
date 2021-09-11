@@ -15,6 +15,14 @@
 		F0593B1326EC55A500A735C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0593B1126EC55A500A735C8 /* LaunchScreen.storyboard */; };
 		F0593B1E26EC55A600A735C8 /* FakeWeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B1D26EC55A600A735C8 /* FakeWeChatTests.swift */; };
 		F0593B2926EC55A600A735C8 /* FakeWeChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B2826EC55A600A735C8 /* FakeWeChatUITests.swift */; };
+		F0593B3826EC807F00A735C8 /* FWCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B3726EC807F00A735C8 /* FWCTabBarController.swift */; };
+		F0593B3B26EC82C300A735C8 /* FWCBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B3A26EC82C300A735C8 /* FWCBaseNavigationController.swift */; };
+		F0593B3D26EC833000A735C8 /* FWCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B3C26EC833000A735C8 /* FWCBaseViewController.swift */; };
+		F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B3F26EC83A400A735C8 /* FWCStyle.swift */; };
+		F0593B5226EC877200A735C8 /* FWCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5126EC877200A735C8 /* FWCMessageViewController.swift */; };
+		F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5326EC878C00A735C8 /* FWCContactViewController.swift */; };
+		F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5526EC87AA00A735C8 /* FWCDiscoveryViewController.swift */; };
+		F0593B5826EC87C400A735C8 /* FWCMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5726EC87C400A735C8 /* FWCMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		F0593B2426EC55A600A735C8 /* FakeWeChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeWeChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0593B2826EC55A600A735C8 /* FakeWeChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeChatUITests.swift; sourceTree = "<group>"; };
 		F0593B2A26EC55A600A735C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0593B3726EC807F00A735C8 /* FWCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCTabBarController.swift; sourceTree = "<group>"; };
+		F0593B3A26EC82C300A735C8 /* FWCBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCBaseNavigationController.swift; sourceTree = "<group>"; };
+		F0593B3C26EC833000A735C8 /* FWCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCBaseViewController.swift; sourceTree = "<group>"; };
+		F0593B3F26EC83A400A735C8 /* FWCStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCStyle.swift; sourceTree = "<group>"; };
+		F0593B5126EC877200A735C8 /* FWCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageViewController.swift; sourceTree = "<group>"; };
+		F0593B5326EC878C00A735C8 /* FWCContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCContactViewController.swift; sourceTree = "<group>"; };
+		F0593B5526EC87AA00A735C8 /* FWCDiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCDiscoveryViewController.swift; sourceTree = "<group>"; };
+		F0593B5726EC87C400A735C8 /* FWCMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,12 @@
 		F0593B0526EC55A300A735C8 /* FakeWeChat */ = {
 			isa = PBXGroup;
 			children = (
+				F0593B4426EC85F900A735C8 /* Me */,
+				F0593B4326EC85EF00A735C8 /* Discovery */,
+				F0593B4226EC85E200A735C8 /* Contact */,
+				F0593B4126EC85C900A735C8 /* Message */,
+				F0593B3E26EC839100A735C8 /* Style */,
+				F0593B3926EC825000A735C8 /* Base */,
 				F0593B0626EC55A300A735C8 /* AppDelegate.swift */,
 				F0593B0826EC55A300A735C8 /* SceneDelegate.swift */,
 				F0593B0A26EC55A300A735C8 /* ViewController.swift */,
@@ -126,6 +148,152 @@
 				F0593B2A26EC55A600A735C8 /* Info.plist */,
 			);
 			path = FakeWeChatUITests;
+			sourceTree = "<group>";
+		};
+		F0593B3926EC825000A735C8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B3726EC807F00A735C8 /* FWCTabBarController.swift */,
+				F0593B3A26EC82C300A735C8 /* FWCBaseNavigationController.swift */,
+				F0593B3C26EC833000A735C8 /* FWCBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F0593B3E26EC839100A735C8 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B3F26EC83A400A735C8 /* FWCStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		F0593B4126EC85C900A735C8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B4726EC870300A735C8 /* Models */,
+				F0593B4626EC86EB00A735C8 /* Views */,
+				F0593B4526EC86DF00A735C8 /* Controllers */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F0593B4226EC85E200A735C8 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B4A26EC871800A735C8 /* Models */,
+				F0593B4926EC871100A735C8 /* Views */,
+				F0593B4826EC870A00A735C8 /* Controllers */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		F0593B4326EC85EF00A735C8 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B4D26EC873100A735C8 /* Models */,
+				F0593B4C26EC872A00A735C8 /* Views */,
+				F0593B4B26EC872000A735C8 /* Controllers */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		F0593B4426EC85F900A735C8 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5026EC874900A735C8 /* Models */,
+				F0593B4F26EC874200A735C8 /* Views */,
+				F0593B4E26EC873900A735C8 /* Controllers */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		F0593B4526EC86DF00A735C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5126EC877200A735C8 /* FWCMessageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0593B4626EC86EB00A735C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0593B4726EC870300A735C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0593B4826EC870A00A735C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5326EC878C00A735C8 /* FWCContactViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0593B4926EC871100A735C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0593B4A26EC871800A735C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0593B4B26EC872000A735C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5526EC87AA00A735C8 /* FWCDiscoveryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0593B4C26EC872A00A735C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0593B4D26EC873100A735C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0593B4E26EC873900A735C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5726EC87C400A735C8 /* FWCMeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0593B4F26EC874200A735C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0593B5026EC874900A735C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +426,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0593B3826EC807F00A735C8 /* FWCTabBarController.swift in Sources */,
 				F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */,
+				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
+				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,
+				F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */,
+				F0593B3D26EC833000A735C8 /* FWCBaseViewController.swift in Sources */,
 				F0593B0726EC55A300A735C8 /* AppDelegate.swift in Sources */,
+				F0593B5226EC877200A735C8 /* FWCMessageViewController.swift in Sources */,
+				F0593B3B26EC82C300A735C8 /* FWCBaseNavigationController.swift in Sources */,
 				F0593B0926EC55A300A735C8 /* SceneDelegate.swift in Sources */,
+				F0593B5826EC87C400A735C8 /* FWCMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
