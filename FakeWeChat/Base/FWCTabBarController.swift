@@ -18,10 +18,10 @@ class FWCTabBarController: UITabBarController {
     
     
     func setupViewControllers() {
-        let messageVC = self.createViewController(title: FWCStyle.shared.messageTabbarTitle(), normalImage: "", selectImage: "", baseVC: FWCMessageViewController())
-        let contactVC = self.createViewController(title: FWCStyle.shared.contactTabbarTitle(), normalImage: "", selectImage: "", baseVC: FWCContactViewController())
-        let discoveryVC = self.createViewController(title: FWCStyle.shared.discoveryTabbarTitle(), normalImage: "", selectImage: "", baseVC: FWCDiscoveryViewController())
-        let meVC = self.createViewController(title: FWCStyle.shared.meTabbarTitle(), normalImage: "", selectImage: "", baseVC: FWCMeViewController())
+        let messageVC = self.createViewController(title: FWCStyle.shared.messageTabbarTitle(), normalImage: FWCStyle.shared.tabbarMeNormalImage(), selectImage: FWCStyle.shared.tabbarMeSelectImage(), baseVC: FWCMessageViewController())
+        let contactVC = self.createViewController(title: FWCStyle.shared.contactTabbarTitle(), normalImage: FWCStyle.shared.tabbarContactsNormalImage(), selectImage: FWCStyle.shared.tabbarContactsSelectImage(), baseVC: FWCContactViewController())
+        let discoveryVC = self.createViewController(title: FWCStyle.shared.discoveryTabbarTitle(), normalImage: FWCStyle.shared.tabbarDiscoveryNormalImage(), selectImage: FWCStyle.shared.tabbarDiscoverySelectImage(), baseVC: FWCDiscoveryViewController())
+        let meVC = self.createViewController(title: FWCStyle.shared.meTabbarTitle(), normalImage: FWCStyle.shared.tabbarMeNormalImage(), selectImage: FWCStyle.shared.tabbarMeSelectImage(), baseVC: FWCMeViewController())
         viewControllers = [messageVC,contactVC,discoveryVC,meVC]
     }
     
@@ -31,8 +31,8 @@ class FWCTabBarController: UITabBarController {
         let navc: FWCBaseNavigationController = FWCBaseNavigationController(rootViewController: baseVC)
         
         navc.tabBarItem.title = title
-        navc.tabBarItem.image = UIImage(named: normalImage)
-        navc.tabBarItem.selectedImage = UIImage(named: selectImage)
+        navc.tabBarItem.image = UIImage(named: normalImage)?.withRenderingMode(.alwaysOriginal)
+        navc.tabBarItem.selectedImage = UIImage(named: selectImage)?.withRenderingMode(.alwaysOriginal)
         navc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: FWCStyle.shared.tabbarTitleNormalColor()], for: .normal)
         navc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: FWCStyle.shared.tabbarTitleSelectColor()], for: .selected)
         return navc

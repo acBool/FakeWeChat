@@ -48,6 +48,38 @@ extension FWCStyle {
     func messageAvatarHolderImage() -> String {
         return "fwc_message_avatar_holder"
     }
+    
+    func tabbarMessageNormalImage() -> String {
+        return "fwc_tabbar_message"
+    }
+    
+    func tabbarMessageSelectImage() -> String {
+        return "fwc_tabbar_message_select"
+    }
+    
+    func tabbarContactsNormalImage() -> String {
+        return "fwc_tabbar_contacts"
+    }
+    
+    func tabbarContactsSelectImage() -> String {
+        return "fwc_tabbar_contacts_select"
+    }
+    
+    func tabbarDiscoveryNormalImage() -> String {
+        return "fwc_tabbar_discover"
+    }
+    
+    func tabbarDiscoverySelectImage() -> String {
+        return "fwc_tabbar_discover_select"
+    }
+    
+    func tabbarMeNormalImage() -> String {
+        return "fwc_tabbar_me"
+    }
+    
+    func tabbarMeSelectImage() -> String {
+        return "fwc_tabbar_me_select"
+    }
 }
 
 
