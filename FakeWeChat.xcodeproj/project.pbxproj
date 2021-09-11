@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ADA224951326A37F77FEC4B /* libPods-FakeWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E72912268C7745843C00A284 /* libPods-FakeWeChat.a */; };
 		F0593B0726EC55A300A735C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B0626EC55A300A735C8 /* AppDelegate.swift */; };
 		F0593B0926EC55A300A735C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B0826EC55A300A735C8 /* SceneDelegate.swift */; };
 		F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B0A26EC55A300A735C8 /* ViewController.swift */; };
@@ -23,6 +24,9 @@
 		F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5326EC878C00A735C8 /* FWCContactViewController.swift */; };
 		F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5526EC87AA00A735C8 /* FWCDiscoveryViewController.swift */; };
 		F0593B5826EC87C400A735C8 /* FWCMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5726EC87C400A735C8 /* FWCMeViewController.swift */; };
+		F0593B5B26EC946B00A735C8 /* FWCUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5A26EC946B00A735C8 /* FWCUtilities.swift */; };
+		F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */; };
+		F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		106C75A012CC5060B6FD8EE8 /* Pods-FakeWeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeWeChat.release.xcconfig"; path = "Target Support Files/Pods-FakeWeChat/Pods-FakeWeChat.release.xcconfig"; sourceTree = "<group>"; };
+		2573A49B016F5117B0B69CB8 /* Pods-FakeWeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeWeChat.debug.xcconfig"; path = "Target Support Files/Pods-FakeWeChat/Pods-FakeWeChat.debug.xcconfig"; sourceTree = "<group>"; };
+		E72912268C7745843C00A284 /* libPods-FakeWeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FakeWeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0593B0326EC55A300A735C8 /* FakeWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0593B0626EC55A300A735C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0593B0826EC55A300A735C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 		F0593B5326EC878C00A735C8 /* FWCContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCContactViewController.swift; sourceTree = "<group>"; };
 		F0593B5526EC87AA00A735C8 /* FWCDiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCDiscoveryViewController.swift; sourceTree = "<group>"; };
 		F0593B5726EC87C400A735C8 /* FWCMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMeViewController.swift; sourceTree = "<group>"; };
+		F0593B5A26EC946B00A735C8 /* FWCUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCUtilities.swift; sourceTree = "<group>"; };
+		F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageListCell.swift; sourceTree = "<group>"; };
+		F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADA224951326A37F77FEC4B /* libPods-FakeWeChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12C1BFDEAB9E8C71B82B9D53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2573A49B016F5117B0B69CB8 /* Pods-FakeWeChat.debug.xcconfig */,
+				106C75A012CC5060B6FD8EE8 /* Pods-FakeWeChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F0593AFA26EC55A200A735C8 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,8 @@
 				F0593B1C26EC55A600A735C8 /* FakeWeChatTests */,
 				F0593B2726EC55A600A735C8 /* FakeWeChatUITests */,
 				F0593B0426EC55A300A735C8 /* Products */,
+				12C1BFDEAB9E8C71B82B9D53 /* Pods */,
+				F670F064949E93A540C8D081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +137,7 @@
 		F0593B0526EC55A300A735C8 /* FakeWeChat */ = {
 			isa = PBXGroup;
 			children = (
+				F0593B5926EC944D00A735C8 /* Tool */,
 				F0593B4426EC85F900A735C8 /* Me */,
 				F0593B4326EC85EF00A735C8 /* Discovery */,
 				F0593B4226EC85E200A735C8 /* Contact */,
@@ -219,6 +242,7 @@
 		F0593B4626EC86EB00A735C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +250,7 @@
 		F0593B4726EC870300A735C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +321,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F0593B5926EC944D00A735C8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5A26EC946B00A735C8 /* FWCUtilities.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F670F064949E93A540C8D081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E72912268C7745843C00A284 /* libPods-FakeWeChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +344,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0593B2D26EC55A600A735C8 /* Build configuration list for PBXNativeTarget "FakeWeChat" */;
 			buildPhases = (
+				CC088C0A170226853DDB081F /* [CP] Check Pods Manifest.lock */,
 				F0593AFF26EC55A300A735C8 /* Sources */,
 				F0593B0026EC55A300A735C8 /* Frameworks */,
 				F0593B0126EC55A300A735C8 /* Resources */,
@@ -421,15 +463,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CC088C0A170226853DDB081F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FakeWeChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F0593AFF26EC55A300A735C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0593B3826EC807F00A735C8 /* FWCTabBarController.swift in Sources */,
+				F0593B5B26EC946B00A735C8 /* FWCUtilities.swift in Sources */,
 				F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */,
 				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
 				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,
+				F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */,
+				F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */,
 				F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */,
 				F0593B3D26EC833000A735C8 /* FWCBaseViewController.swift in Sources */,
 				F0593B0726EC55A300A735C8 /* AppDelegate.swift in Sources */,
@@ -609,6 +679,7 @@
 		};
 		F0593B2E26EC55A600A735C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2573A49B016F5117B0B69CB8 /* Pods-FakeWeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -627,6 +698,7 @@
 		};
 		F0593B2F26EC55A600A735C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 106C75A012CC5060B6FD8EE8 /* Pods-FakeWeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

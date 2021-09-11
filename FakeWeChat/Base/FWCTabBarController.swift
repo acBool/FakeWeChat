@@ -33,8 +33,8 @@ class FWCTabBarController: UITabBarController {
         navc.tabBarItem.title = title
         navc.tabBarItem.image = UIImage(named: normalImage)
         navc.tabBarItem.selectedImage = UIImage(named: selectImage)
-        //controller.tabBarItem!.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: UIControl.State())
-        //controller.tabBarItem!.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.tabbarSelectedTextColor], for: .selected)
+        navc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: FWCStyle.shared.tabbarTitleNormalColor()], for: .normal)
+        navc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: FWCStyle.shared.tabbarTitleSelectColor()], for: .selected)
         return navc
     }
     

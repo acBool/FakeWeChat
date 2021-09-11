@@ -13,6 +13,7 @@ class FWCMessageViewController: FWCBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = FWCStyle.shared.messageTabbarTitle()
     }
     
 
