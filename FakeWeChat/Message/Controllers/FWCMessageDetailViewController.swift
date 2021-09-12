@@ -56,6 +56,10 @@ extension FWCMessageDetailViewController {
             FWCSqlTool.shared.getMessageModelFromSql(chatId: self.chatModel.chatSessionId, dataSourceArray: &dataSourceArray)
             if dataSourceArray.count > 0 {
                 self.viewModel.dataSourceArray = dataSourceArray
+                for _ in 1...dataSourceArray.count {
+                    let cellFrame = FWCDetailCellFrame()
+                    self.viewModel.cellFrameArray.append(cellFrame)
+                }
                 self.refreshMessageData()
             }
         }

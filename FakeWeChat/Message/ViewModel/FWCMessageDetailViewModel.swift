@@ -25,18 +25,28 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-//        if indexPath.row < cellFrameArray.count {
-//            let cellFrame: TableHomeListCellFrame = cellFrameArray[indexPath.row]
-//            if cellFrame.height > 0 {
-//                return cellFrame.height
-//            }
-//        }
-//        return kDefaultCellHeight
+        if indexPath.row < cellFrameArray.count {
+            let cellFrame: FWCDetailCellFrame = cellFrameArray[indexPath.row]
+            if cellFrame.height > 0 {
+                return cellFrame.height + RS(20)
+            }
+        }
+        return RS(50)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if indexPath.row < cellFrameArray.count {
+            let cellFrame: FWCDetailCellFrame = cellFrameArray[indexPath.row]
+            if cellFrame.height == 0 {
+                // 高度需要计算
+                let model: FWCMessageModel = dataSourceArray[indexPath.row]
+                calculateCellFrame(cellFrame: cellFrame, model: model)
+                return cellFrame.height + RS(20)
+            }else{
+                return cellFrame.height + RS(20)
+            }
+        }
+        return RS(50)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,19 +60,22 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
             if cell == nil {
                 return FWCMessageDetailTextCell(style: .default, reuseIdentifier: "FWCMessageDetailTextCell")
             }
-            cell?.bindData(model: model)
+            let cellFrame: FWCDetailCellFrame = cellFrameArray[indexPath.row]
+            if cellFrame.height == 0 {
+                calculateCellFrame(cellFrame: cellFrame, model: model)
+            }
+            cell?.bindData(model: model, cellFrame: cellFrameArray[indexPath.row])
             return cell!
         }
         return UITableViewCell()
-        
-        //        if indexPath.row < self.dataSourceArray.count {
-//            let model: FWCChatModel = dataSourceArray[indexPath.row]
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "FWCMessageListCell") as? FWCMessageListCell
-//            if cell == nil {
-//                return FWCMessageListCell(style: .default, reuseIdentifier: "FWCMessageListCell")
-//            }
-//            cell?.bindData(model: model)
-//            return cell!
-//        }
+    }
+}
+
+
+extension FWCMessageDetailViewModel {
+    func calculateCellFrame(cellFrame: FWCDetailCellFrame,model: FWCMessageModel) {
+        let size = calculateContentSize(content: model.messageText)
+        cellFrame.width = size.width
+        cellFrame.height = size.height > RS(50) ? size.height : RS(50)
     }
 }

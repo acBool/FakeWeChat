@@ -37,44 +37,58 @@ class FWCMessageDetailTextCell: FWCMessageDetailBaseCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.contentView.addSubview(bgImageView)
-        self.contentView.addSubview(contentLabel)
+        bgImageView.addSubview(contentLabel)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 
 extension FWCMessageDetailTextCell {
     // 右侧布局
-    func layoutToRight() {
+    func layoutToRight(_ cellFrame: FWCDetailCellFrame) {
         headImageView.frame = CGRect(x: ScreenWidth - RS(40), y: RS(10), width: RS(30), height: RS(30))
         let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
         headImageView.layer.mask = shapeLayer
+        
+        let stretchImage = UIImage(named: "fwc_message_detail_sender_bg")!
+        let bubbleImage = stretchImage.resizableImage(withCapInsets: UIEdgeInsets.init(top: 30, left: 28, bottom: 85, right: 28), resizingMode: .stretch)
+        self.bgImageView.image = bubbleImage
+        self.bgImageView.frame = CGRect(x: ScreenWidth - RS(40) - RS(20) - cellFrame.width, y: RS(10), width: cellFrame.width + RS(10), height: cellFrame.height + RS(10))
+        
+        contentLabel.frame = CGRect(x: RS(10), y:RS(5), width: cellFrame.width - RS(10), height: cellFrame.height - RS(10))
     }
     
     // 左侧布局
-    func layoutToLeft() {
+    func layoutToLeft(_ cellFrame: FWCDetailCellFrame) {
         headImageView.frame = CGRect(x: RS(10), y: RS(10), width: RS(30), height: RS(30))
         let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
         headImageView.layer.mask = shapeLayer
+        
+        let stretchImage = UIImage(named: "fwc_message_datail_receiver_bg")!
+        let bubbleImage = stretchImage.resizableImage(withCapInsets: UIEdgeInsets.init(top: 30, left: 28, bottom: 85, right: 28), resizingMode: .stretch)
+        self.bgImageView.image = bubbleImage
+        self.bgImageView.frame = CGRect(x: RS(40) + RS(10), y: RS(10), width: cellFrame.width + RS(10), height: cellFrame.height + RS(10))
+        
+        contentLabel.frame = CGRect(x: RS(10), y:RS(5), width: cellFrame.width - RS(10), height: cellFrame.height - RS(10))
     }
 }
 
 
 extension FWCMessageDetailTextCell {
-    func bindData(model: FWCMessageModel) {
+    func bindData(model: FWCMessageModel, cellFrame: FWCDetailCellFrame) {
         if FWCUser.isFromMe(model){
             // 说明是自己发的消息
-            layoutToRight()
+            layoutToRight(cellFrame)
         }else{
-            layoutToLeft()
+            layoutToLeft(cellFrame)
         }
         
         if model.fromUserAvatarUrl.count > 0 {
             headImageView.af.setImage(withURL: URL(string: model.fromUserAvatarUrl)!)
         }
+        contentLabel.text = model.messageText
     }
 }
