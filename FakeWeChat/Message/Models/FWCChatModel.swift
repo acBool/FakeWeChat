@@ -27,4 +27,25 @@ class FWCChatModel: HandyJSON {
     var lastMessageTime: Int64 = 0
     
     required init() {}
+    
+}
+
+extension FWCChatModel {
+    static func createModel(dict: [String: Any]) -> FWCChatModel {
+        let model = FWCChatModel()
+        model.messageText = dict["messageText"] as! String
+        model.lastMessageTime = dict["lastMessageTime"] as! Int64
+        model.fromUid = dict["fromUid"] as! Int64
+        model.chatSessionId = dict["chatSessionId"] as! Int64
+        model.nickName = dict["nickName"] as! String
+        let type: Int = dict["messageContentType"] as! Int
+        if type == 1 {
+            model.messageContentType = .Text
+        }else{
+            model.messageContentType = .Image
+        }
+        model.receiverUid = dict["receiverUid"] as! Int64
+        model.avatarUrl = dict["avatarUrl"] as! String
+        return model
+    }
 }

@@ -29,6 +29,8 @@
 		F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */; };
 		F0CC3DA626ECE93F00F700F9 /* FWCChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC3DA526ECE93F00F700F9 /* FWCChatModel.swift */; };
 		F0CC3DA826ECED1000F700F9 /* FWCSqlTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC3DA726ECED1000F700F9 /* FWCSqlTool.swift */; };
+		F0E0040326ED8E9E00EA6FA1 /* FWCMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040226ED8E9E00EA6FA1 /* FWCMessageView.swift */; };
+		F0E0040626ED913D00EA6FA1 /* FWCMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		F0593B5E26ECA11F00A735C8 /* FWCMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageModel.swift; sourceTree = "<group>"; };
 		F0CC3DA526ECE93F00F700F9 /* FWCChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCChatModel.swift; sourceTree = "<group>"; };
 		F0CC3DA726ECED1000F700F9 /* FWCSqlTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCSqlTool.swift; sourceTree = "<group>"; };
+		F0E0040226ED8E9E00EA6FA1 /* FWCMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageView.swift; sourceTree = "<group>"; };
+		F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 		F0593B4126EC85C900A735C8 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				F0E0040426ED910100EA6FA1 /* ViewModel */,
 				F0593B4726EC870300A735C8 /* Models */,
 				F0593B4626EC86EB00A735C8 /* Views */,
 				F0593B4526EC86DF00A735C8 /* Controllers */,
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */,
+				F0E0040226ED8E9E00EA6FA1 /* FWCMessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +339,14 @@
 				F0CC3DA726ECED1000F700F9 /* FWCSqlTool.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		F0E0040426ED910100EA6FA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F670F064949E93A540C8D081 /* Frameworks */ = {
@@ -501,12 +515,14 @@
 			files = (
 				F0593B3826EC807F00A735C8 /* FWCTabBarController.swift in Sources */,
 				F0593B5B26EC946B00A735C8 /* FWCUtilities.swift in Sources */,
+				F0E0040326ED8E9E00EA6FA1 /* FWCMessageView.swift in Sources */,
 				F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */,
 				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
 				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,
 				F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */,
 				F0CC3DA626ECE93F00F700F9 /* FWCChatModel.swift in Sources */,
 				F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */,
+				F0E0040626ED913D00EA6FA1 /* FWCMessageViewModel.swift in Sources */,
 				F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */,
 				F0CC3DA826ECED1000F700F9 /* FWCSqlTool.swift in Sources */,
 				F0593B3D26EC833000A735C8 /* FWCBaseViewController.swift in Sources */,

@@ -9,22 +9,51 @@ import UIKit
 
 class FWCMessageViewController: FWCBaseViewController {
 
+    lazy var viewModel: FWCMessageViewModel = {
+        let viewModel = FWCMessageViewModel()
+        return viewModel
+    }()
+    
+    lazy var specView: FWCMessageView = {
+        let view = FWCMessageView()
+        view.backgroundColor = FWCStyle.shared.mainBgColor()
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         title = FWCStyle.shared.messageTabbarTitle()
+        self.setupUI()
+        self.setupData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getChatData()
     }
-    */
 
+    func setupUI() {
+        specView.frame = self.view.bounds
+        view.addSubview(specView)
+    }
+
+}
+
+extension FWCMessageViewController {
+    func setupData() {
+        self.specView.messageTableView.delegate = self.viewModel
+        self.specView.messageTableView.dataSource = self.viewModel
+    }
+    
+    func getChatData() {
+        DispatchQueue.global().async {
+            var dataSourceArray: [FWCChatModel] = []
+            FWCSqlTool.shared.getChatModelFromSql(&dataSourceArray)
+            if dataSourceArray.count > 0 {
+                print("count \(dataSourceArray.count)")
+            }
+        }
+    }
 }

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            FWCSqlTool()
+            FWCSqlTool.shared
         }
         return true
     }
