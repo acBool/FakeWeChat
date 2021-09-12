@@ -56,16 +56,15 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < self.dataSourceArray.count {
             let model: FWCMessageModel = dataSourceArray[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FWCMessageDetailTextCell") as? FWCMessageDetailTextCell
-            if cell == nil {
-                return FWCMessageDetailTextCell(style: .default, reuseIdentifier: "FWCMessageDetailTextCell")
-            }
+            var cell: FWCMessageDetailBaseCell
+            cell = self.createCellWithModel(model: model, tableView: tableView)
+            
             let cellFrame: FWCDetailCellFrame = cellFrameArray[indexPath.row]
             if cellFrame.height == 0 {
                 calculateCellFrame(cellFrame: cellFrame, model: model)
             }
-            cell?.bindData(model: model, cellFrame: cellFrameArray[indexPath.row])
-            return cell!
+            cell.bindData(model: model, cellFrame: cellFrameArray[indexPath.row])
+            return cell
         }
         return UITableViewCell()
     }
@@ -74,8 +73,33 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
 
 extension FWCMessageDetailViewModel {
     func calculateCellFrame(cellFrame: FWCDetailCellFrame,model: FWCMessageModel) {
-        let size = calculateContentSize(content: model.messageText)
-        cellFrame.width = size.width
-        cellFrame.height = size.height > RS(50) ? size.height : RS(50)
+        if model.messageContentType == .Text {
+            // 文字
+            let size = calculateContentSize(content: model.messageText)
+            cellFrame.width = size.width
+            cellFrame.height = size.height > RS(50) ? size.height : RS(50)
+        }else{
+            // 图片
+            cellFrame.width = CGFloat(model.imageWidth)
+            cellFrame.height = CGFloat(model.imageHeight) > RS(50) ? CGFloat(model.imageHeight) : RS(50)
+        }
+    }
+    
+    
+    func createCellWithModel(model: FWCMessageModel, tableView: UITableView) -> FWCMessageDetailBaseCell
+    {
+        if model.messageContentType == .Text {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FWCMessageDetailTextCell") as? FWCMessageDetailTextCell
+            if cell == nil {
+                return FWCMessageDetailTextCell(style: .default, reuseIdentifier: "FWCMessageDetailTextCell")
+            }
+            return cell!
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FWCMessageDetailImageCell") as? FWCMessageDetailImageCell
+            if cell == nil {
+                return FWCMessageDetailImageCell(style: .default, reuseIdentifier: "FWCMessageDetailImageCell")
+            }
+            return cell!
+        }
     }
 }

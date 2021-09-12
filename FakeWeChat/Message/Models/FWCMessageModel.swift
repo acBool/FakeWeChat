@@ -40,6 +40,12 @@ class FWCMessageModel: HandyJSON {
     var messageTime: Int64 = 0
     // 会话id，每组会话对应一个唯一id。多条消息的chatSessionId可能相同。
     var chatSessionId: Int64 = 0
+    // 图片宽度
+    var imageWidth: Int = 0
+    // 图片高度
+    var imageHeight: Int = 0
+    // 图片数据
+    var imageData: Data? = nil
     
     required init() {}
 }
@@ -62,6 +68,10 @@ extension FWCMessageModel {
         }else{
             model.messageContentType = .Image
         }
+        model.imageWidth = dict["messageImageWidth"] as! Int
+        model.imageHeight = dict["messageImageHeight"] as! Int
+        model.imageData = dict["messageImageData"] as? Data
+        
         return model
     }
 }

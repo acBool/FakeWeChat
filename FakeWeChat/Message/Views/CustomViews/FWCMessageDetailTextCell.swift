@@ -43,6 +43,20 @@ class FWCMessageDetailTextCell: FWCMessageDetailBaseCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func bindData(model: FWCMessageModel, cellFrame: FWCDetailCellFrame) {
+        if FWCUser.isFromMe(model){
+            // 说明是自己发的消息
+            layoutToRight(cellFrame)
+        }else{
+            layoutToLeft(cellFrame)
+        }
+        
+        if model.fromUserAvatarUrl.count > 0 {
+            headImageView.af.setImage(withURL: URL(string: model.fromUserAvatarUrl)!)
+        }
+        contentLabel.text = model.messageText
+    }
 }
 
 
@@ -76,19 +90,3 @@ extension FWCMessageDetailTextCell {
     }
 }
 
-
-extension FWCMessageDetailTextCell {
-    func bindData(model: FWCMessageModel, cellFrame: FWCDetailCellFrame) {
-        if FWCUser.isFromMe(model){
-            // 说明是自己发的消息
-            layoutToRight(cellFrame)
-        }else{
-            layoutToLeft(cellFrame)
-        }
-        
-        if model.fromUserAvatarUrl.count > 0 {
-            headImageView.af.setImage(withURL: URL(string: model.fromUserAvatarUrl)!)
-        }
-        contentLabel.text = model.messageText
-    }
-}

@@ -96,6 +96,24 @@ extension FWCMessageDetailViewController {
         
         ac.selectImageBlock = { [weak self] (images, assets, isOriginal) in
             // your code
+            if images.count > 0 {
+                let selectImage: UIImage = images[0]
+                if selectImage.size.width > 200 || selectImage.size.height > 200 {
+                    var newSize = CGSize(width: 0, height: 0)
+                    if selectImage.size.height > selectImage.size.width {
+                        // 高大于宽，以高为准
+                         newSize = CGSize(width: 200 * selectImage.size.width / selectImage.size.height, height: 200)
+                    }else{
+                        newSize = CGSize(width: 200, height: selectImage.size.height * 200 / selectImage.size.width)
+                    }
+                    let newImage: UIImage? = resizeImage(image: selectImage, targetSize: newSize)
+                    if let sizeImage = newImage {
+                        let imageData = compressImageOnlength(maxLength: 1000000, image: sizeImage)
+                        FWCSqlTool.shared.insertImageMessageToDB(imageData: imageData, width: Int(newSize.width), height: Int(newSize.height), model: self!.chatModel)
+                        self!.getMessageFromSql()
+                    }
+                }
+            }
             print(images)
         }
         ac.showPhotoLibrary(sender: self)

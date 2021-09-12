@@ -37,4 +37,8 @@ class FWCMessageDetailBaseCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func bindData(model: FWCMessageModel, cellFrame: FWCDetailCellFrame) {
+        
+    }
+    
 }
