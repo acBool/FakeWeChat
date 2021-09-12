@@ -38,6 +38,7 @@
 		F0E0041126EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */; };
 		F0E0041326EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */; };
 		F0E0041626EDE3D000EA6FA1 /* FWCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041526EDE3D000EA6FA1 /* FWCUser.swift */; };
+		F0E0041826EDFADB00EA6FA1 /* FWCMessageDetailBottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041726EDFADB00EA6FA1 /* FWCMessageDetailBottomBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailTextCell.swift; sourceTree = "<group>"; };
 		F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailImageCell.swift; sourceTree = "<group>"; };
 		F0E0041526EDE3D000EA6FA1 /* FWCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCUser.swift; sourceTree = "<group>"; };
+		F0E0041726EDFADB00EA6FA1 /* FWCMessageDetailBottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailBottomBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 				F0E0040A26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift */,
 				F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */,
 				F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */,
+				F0E0041726EDFADB00EA6FA1 /* FWCMessageDetailBottomBarView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */,
 				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
 				F0E0040D26EDD40F00EA6FA1 /* FWCMessageDetailView.swift in Sources */,
+				F0E0041826EDFADB00EA6FA1 /* FWCMessageDetailBottomBarView.swift in Sources */,
 				F0E0041626EDE3D000EA6FA1 /* FWCUser.swift in Sources */,
 				F0E0040926EDC40700EA6FA1 /* FWCMessageDetailViewController.swift in Sources */,
 				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,

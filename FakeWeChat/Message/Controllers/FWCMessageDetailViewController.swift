@@ -50,6 +50,7 @@ extension FWCMessageDetailViewController {
     func setupData() {
         self.specView.tableView.dataSource = self.viewModel
         self.specView.tableView.delegate = self.viewModel
+        self.specView.actionView.textView.delegate = self
         
         DispatchQueue.global().async {
             var dataSourceArray: [FWCMessageModel] = []
@@ -69,5 +70,16 @@ extension FWCMessageDetailViewController {
         DispatchQueue.main.async {
             self.specView.tableView.reloadData()
         }
+    }
+}
+
+
+extension FWCMessageDetailViewController : UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            print(textView.text)
+            return false
+        }
+        return true
     }
 }

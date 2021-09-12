@@ -46,6 +46,10 @@ class FWCStyle {
     func messageDetailBgColor() -> UIColor {
         return UIColor(hex: 0xf3f3f3)!
     }
+    
+    func messageDetailActionBarBorderColor() -> UIColor {
+        return UIColor(hex: 0xc2c3c7)!
+    }
 }
 
 

@@ -9,6 +9,13 @@ import UIKit
 
 class FWCMessageDetailView: UIView {
 
+    lazy var actionView: FWCMessageDetailBottomBarView = {
+        let view = FWCMessageDetailBottomBarView()
+        view.layer.borderWidth = 0.3
+        view.layer.borderColor = FWCStyle.shared.messageDetailActionBarBorderColor().cgColor
+        return view
+    }()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.separatorStyle = .none
@@ -29,11 +36,13 @@ class FWCMessageDetailView: UIView {
     
     private func setupUI() {
         addSubview(tableView)
+        addSubview(actionView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        tableView.pin.all()
+        tableView.pin.left().right().top().bottom(RS(70))
+        actionView.pin.left().right().bottom().height(RS(70))
     }
 
 }
