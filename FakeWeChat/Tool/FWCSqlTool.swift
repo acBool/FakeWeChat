@@ -31,6 +31,7 @@ class FWCSqlTool {
     let cFromUid = Expression<Int64>("fromUid")
     let cReceiverUid = Expression<Int64>("receiverUid")
     let cNickName = Expression<String?>("nickName")
+    let cUserId = Expression<Int64>("userId")
     let cAvatarUrl = Expression<String?>("avatarUrl")
     let cMessageText = Expression<String?>("messageText")
     let cMessageContentType = Expression<Int>("messageContentType")
@@ -56,6 +57,7 @@ class FWCSqlTool {
             table.column(cFromUid)
             table.column(cReceiverUid)
             table.column(cNickName)
+            table.column(cUserId)
             table.column(cAvatarUrl)
             table.column(cMessageText)
             table.column(cMessageContentType)
@@ -155,34 +157,34 @@ class FWCSqlTool {
         let chatList = Array(result)
         if chatList.count == 0 {
             print("chat is empty")
-            var insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 101,cNickName <- "钱先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",cMessageText <- "这是最新的消息",cMessageContentType <- 1,cLastMessageTime <- 1631377073)
+            var insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 101,cNickName <- "钱先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",cMessageText <- "这是最新的消息",cMessageContentType <- 1,cLastMessageTime <- 1631377073,cUserId <- 101)
             var rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 102, cReceiverUid <- 100,cNickName <- "孙先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/2_head@2x.png?raw=true",cMessageText <- "你好，我是老孙",cMessageContentType <- 1,cLastMessageTime <- 1631378073)
+            insert = chatTable.insert(cFromUid <- 102, cReceiverUid <- 100,cNickName <- "孙先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/2_head@2x.png?raw=true",cMessageText <- "你好，我是老孙",cMessageContentType <- 1,cLastMessageTime <- 1631378073,cUserId <- 102)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 103, cReceiverUid <- 100,cNickName <- "李先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/3_head@2x.png?raw=true",cMessageText <- "你好，我是老李",cMessageContentType <- 1,cLastMessageTime <- 1631379073)
+            insert = chatTable.insert(cFromUid <- 103, cReceiverUid <- 100,cNickName <- "李先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/3_head@2x.png?raw=true",cMessageText <- "你好，我是老李",cMessageContentType <- 1,cLastMessageTime <- 1631379073, cUserId <- 103)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 104, cReceiverUid <- 100,cNickName <- "周女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/4_head@2x.png?raw=true",cMessageText <- "你好，我是周女士",cMessageContentType <- 1,cLastMessageTime <- 1631380073)
+            insert = chatTable.insert(cFromUid <- 104, cReceiverUid <- 100,cNickName <- "周女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/4_head@2x.png?raw=true",cMessageText <- "你好，我是周女士",cMessageContentType <- 1,cLastMessageTime <- 1631380073, cUserId <- 104)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 105,cNickName <- "吴女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/5_head@2x.png?raw=true",cMessageText <- "你好，我是赵先生",cMessageContentType <- 1,cLastMessageTime <- 1631381073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 105,cNickName <- "吴女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/5_head@2x.png?raw=true",cMessageText <- "你好，我是赵先生",cMessageContentType <- 1,cLastMessageTime <- 1631381073, cUserId <- 105)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 106, cReceiverUid <- 100,cNickName <- "郑女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/6_head@2x.png?raw=true",cMessageText <- "你好，我是美丽善良的郑女士",cMessageContentType <- 1,cLastMessageTime <- 1631382073)
+            insert = chatTable.insert(cFromUid <- 106, cReceiverUid <- 100,cNickName <- "郑女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/6_head@2x.png?raw=true",cMessageText <- "你好，我是美丽善良的郑女士",cMessageContentType <- 1,cLastMessageTime <- 1631382073, cUserId <- 106)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 107,cNickName <- "王女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/7_head@2x.png?raw=true",cMessageText <- "美丽善良的王女士，你好啊",cMessageContentType <- 1,cLastMessageTime <- 1631383073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 107,cNickName <- "王女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/7_head@2x.png?raw=true",cMessageText <- "美丽善良的王女士，你好啊",cMessageContentType <- 1,cLastMessageTime <- 1631383073,cUserId <- 107)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 108, cReceiverUid <- 100,cNickName <- "冯先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/8_head@2x.png?raw=true",cMessageText <- "我是上海滩冯先生",cMessageContentType <- 1,cLastMessageTime <- 1631384073)
+            insert = chatTable.insert(cFromUid <- 108, cReceiverUid <- 100,cNickName <- "冯先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/8_head@2x.png?raw=true",cMessageText <- "我是上海滩冯先生",cMessageContentType <- 1,cLastMessageTime <- 1631384073, cUserId <- 108)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 109,cNickName <- "陈女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/9_head@2x.png?raw=true",cMessageText <- "陈女士，你好，我是老赵",cMessageContentType <- 1,cLastMessageTime <- 1631385073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 109,cNickName <- "陈女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/9_head@2x.png?raw=true",cMessageText <- "陈女士，你好，我是老赵",cMessageContentType <- 1,cLastMessageTime <- 1631385073, cUserId <- 109)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 110, cReceiverUid <- 100,cNickName <- "金女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/10_head@2x.png?raw=true",cMessageText <- "我是小金",cMessageContentType <- 1,cLastMessageTime <- 1631386073)
+            insert = chatTable.insert(cFromUid <- 110, cReceiverUid <- 100,cNickName <- "金女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/10_head@2x.png?raw=true",cMessageText <- "我是小金",cMessageContentType <- 1,cLastMessageTime <- 1631386073,cUserId <- 110)
             rowid = try! db.run(insert)
         }
     }
@@ -209,6 +211,7 @@ extension FWCSqlTool {
                 addKeyValueToDict(key: "messageContentType", value: chat[cMessageContentType], dict: &dict)
                 addKeyValueToDict(key: "chatSessionId", value: chat[cChatSessionId], dict: &dict)
                 addKeyValueToDict(key: "lastMessageTime", value: chat[cLastMessageTime], dict: &dict)
+                addKeyValueToDict(key: "userId", value: chat[cUserId], dict: &dict)
                 //print(dict)
                 let chatModel = FWCChatModel.createModel(dict: dict)
                 dataSourceArray.append(chatModel)
@@ -234,12 +237,29 @@ extension FWCSqlTool {
                 addKeyValueToDict(key: "messageContentType", value: message[mMessageContentType], dict: &dict)
                 addKeyValueToDict(key: "messageTime", value: message[mMessageTime], dict: &dict)
                 addKeyValueToDict(key: "chatSessionId", value: message[mChatSessionId], dict: &dict)
-                print(dict)
+                //print(dict)
                 let messageModel = FWCMessageModel.createModel(dict: dict)
                 dataSourceArray.append(messageModel)
             }
         }catch {
             print("error")
         }
+    }
+    
+    
+    func insertMessageToDB(message: String,model: FWCChatModel) {
+        let messageTable = Table("messageTable")
+        let timeInterval: TimeInterval = Date().timeIntervalSince1970
+        let timeStamp = Int64(timeInterval)
+        let insert = messageTable.insert(mFromUid <- FWCUser.getUid(), mReceiverUid <- model.userId,mFromUserName <- FWCUser.getUserName(),mReceiverUserName <- model.nickName,mFromUserAvatarUrl <- FWCUser.getUserAvatar(),mReceiverUserAvatarUrl <- model.avatarUrl,mMessageText <- message,mMessageContentType <- 1,mMessageTime <- timeStamp,mChatSessionId <- model.chatSessionId)
+        let rowid = try! db.run(insert)
+    }
+    
+    func updateChatTable(message: String, model: FWCChatModel) {
+        let chatTable = Table("chatTable")
+        let alice = chatTable.filter(cChatSessionId == model.chatSessionId)
+        let timeInterval: TimeInterval = Date().timeIntervalSince1970
+        let timeStamp = Int64(timeInterval)
+        let rowid = try! db.run(alice.update(cFromUid <- FWCUser.getUid(),cReceiverUid <- model.userId,cMessageText <- message, cLastMessageTime <- timeStamp, cMessageContentType <- 1))
     }
 }

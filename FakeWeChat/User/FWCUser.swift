@@ -15,4 +15,16 @@ class FWCUser {
         }
         return false
     }
+    
+    static func getUid() -> Int64 {
+        return 100
+    }
+    
+    static func getUserName() -> String {
+        return "赵先生"
+    }
+    
+    static func getUserAvatar() -> String {
+        return "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true"
+    }
 }

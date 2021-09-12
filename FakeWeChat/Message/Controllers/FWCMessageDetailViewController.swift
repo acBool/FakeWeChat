@@ -52,6 +52,18 @@ extension FWCMessageDetailViewController {
         self.specView.tableView.delegate = self.viewModel
         self.specView.actionView.textView.delegate = self
         
+        self.getMessageFromSql()
+    }
+    
+    func refreshMessageData() {
+        DispatchQueue.main.async {
+            self.specView.tableView.reloadData()
+            let indexPath: IndexPath = IndexPath(row: self.viewModel.dataSourceArray.count - 1, section: 0)
+            self.specView.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
+    }
+    
+    func getMessageFromSql() {
         DispatchQueue.global().async {
             var dataSourceArray: [FWCMessageModel] = []
             FWCSqlTool.shared.getMessageModelFromSql(chatId: self.chatModel.chatSessionId, dataSourceArray: &dataSourceArray)
@@ -66,9 +78,9 @@ extension FWCMessageDetailViewController {
         }
     }
     
-    func refreshMessageData() {
-        DispatchQueue.main.async {
-            self.specView.tableView.reloadData()
+    func refreshChatSessionMessage(message: String) {
+        DispatchQueue.global().async {
+            FWCSqlTool.shared.updateChatTable(message: message, model: self.chatModel)
         }
     }
 }
@@ -77,7 +89,15 @@ extension FWCMessageDetailViewController {
 extension FWCMessageDetailViewController : UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            print(textView.text)
+            if let message = textView.text {
+                if message.count > 0 {
+                    FWCSqlTool.shared.insertMessageToDB(message: message, model: self.chatModel)
+                    textView.resignFirstResponder()
+                    textView.text = ""
+                    self.getMessageFromSql()
+                    self.refreshChatSessionMessage(message: message)
+                }
+            }
             return false
         }
         return true

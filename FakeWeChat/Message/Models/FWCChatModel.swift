@@ -13,7 +13,7 @@ class FWCChatModel: HandyJSON {
     var fromUid: Int64 = 0
     // 接收信息人id
     var receiverUid: Int64 = 0
-    // 发信人昵称
+    // 好友昵称
     var nickName: String = ""
     // 发信人头像
     var avatarUrl: String = ""
@@ -25,6 +25,8 @@ class FWCChatModel: HandyJSON {
     var chatSessionId: Int64 = 0
     // 最后一条消息时间
     var lastMessageTime: Int64 = 0
+    // 好友id
+    var userId: Int64 = 0
     
     required init() {}
     
@@ -46,6 +48,7 @@ extension FWCChatModel {
         }
         model.receiverUid = dict["receiverUid"] as! Int64
         model.avatarUrl = dict["avatarUrl"] as! String
+        model.userId = dict["userId"] as! Int64
         return model
     }
 }

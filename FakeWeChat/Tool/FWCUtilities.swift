@@ -41,13 +41,13 @@ func formatMessageTime(messageTime: Int) -> String {
     
     if currentDate.year == messageDate.year && currentDate.month == messageDate.month && currentDate.day == messageDate.day {
         // 年月日都相等
-        return String(format:"%02x" ,messageDate.hour) + ":" + String(format:"%02x" ,messageDate.minute)
+        return String(format:"%02d" ,messageDate.hour) + ":" + String(format:"%02d" ,messageDate.minute)
     }else if currentDate.year == messageDate.year {
         // 年相等，月日不等
-        return String(format:"%02x" ,messageDate.month) + "-" + String(format:"%02x" ,messageDate.day) + " " + String(format:"%02x" ,messageDate.hour) + ":" + String(format:"%02x" ,messageDate.minute)
+        return String(format:"%02d" ,messageDate.month) + "-" + String(format:"%02d" ,messageDate.day) + " " + String(format:"%02d" ,messageDate.hour) + ":" + String(format:"%02d" ,messageDate.minute)
     }else{
         // 年月日都不等
-        return String(messageDate.year) + "-" + String(format:"%02x" ,messageDate.month) + "-" + String(format:"%02x" ,messageDate.day) + " " + String(format:"%02x" ,messageDate.hour) + ":" + String(format:"%02x" ,messageDate.minute)
+        return String(messageDate.year) + "-" + String(format:"%02d" ,messageDate.month) + "-" + String(format:"%02d" ,messageDate.day) + " " + String(format:"%02d" ,messageDate.hour) + ":" + String(format:"%02d" ,messageDate.minute)
     }
 }
 
