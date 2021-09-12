@@ -59,7 +59,6 @@ extension FWCMessageViewController {
             var dataSourceArray: [FWCChatModel] = []
             FWCSqlTool.shared.getChatModelFromSql(&dataSourceArray)
             if dataSourceArray.count > 0 {
-                print("count \(dataSourceArray.count)")
                 self.viewModel.dataSourceArray = dataSourceArray
                 self.refreshMessageData()
             }

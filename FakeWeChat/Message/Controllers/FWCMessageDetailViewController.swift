@@ -80,9 +80,9 @@ extension FWCMessageDetailViewController {
         }
     }
     
-    func refreshChatSessionMessage(message: String) {
+    func refreshChatSessionMessage(message: String, isImage: Bool) {
         DispatchQueue.global().async {
-            FWCSqlTool.shared.updateChatTable(message: message, model: self.chatModel)
+            FWCSqlTool.shared.updateChatTable(message: message, model: self.chatModel,isImage: isImage)
         }
     }
 }
@@ -111,6 +111,7 @@ extension FWCMessageDetailViewController {
                         let imageData = compressImageOnlength(maxLength: 1000000, image: sizeImage)
                         FWCSqlTool.shared.insertImageMessageToDB(imageData: imageData, width: Int(newSize.width), height: Int(newSize.height), model: self!.chatModel)
                         self!.getMessageFromSql()
+                        self!.refreshChatSessionMessage(message: "", isImage: true)
                     }
                 }
             }
@@ -131,7 +132,7 @@ extension FWCMessageDetailViewController : UITextViewDelegate {
                     textView.resignFirstResponder()
                     textView.text = ""
                     self.getMessageFromSql()
-                    self.refreshChatSessionMessage(message: message)
+                    self.refreshChatSessionMessage(message: message, isImage: false)
                 }
             }
             return false

@@ -93,10 +93,14 @@ class FWCMessageListCell: UITableViewCell {
 extension FWCMessageListCell {
     func bindData(model: FWCChatModel) {
         self.nickNameLayer.string = model.nickName
-        self.messageLayer.string = model.messageText
         self.dateLayer.string = formatMessageTime(messageTime:Int(model.lastMessageTime))
         if model.avatarUrl.count > 0 {
             headImageView.af.setImage(withURL: URL(string: model.avatarUrl)!)
+        }
+        if model.messageContentType == .Text {
+            self.messageLayer.string = model.messageText
+        }else {
+            self.messageLayer.string = "[图片]"
         }
     }
 }

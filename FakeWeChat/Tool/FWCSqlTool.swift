@@ -271,11 +271,15 @@ extension FWCSqlTool {
         let rowid = try! db.run(insert)
     }
     
-    func updateChatTable(message: String, model: FWCChatModel) {
+    func updateChatTable(message: String, model: FWCChatModel,isImage: Bool) {
         let chatTable = Table("chatTable")
         let alice = chatTable.filter(cChatSessionId == model.chatSessionId)
         let timeInterval: TimeInterval = Date().timeIntervalSince1970
         let timeStamp = Int64(timeInterval)
-        let rowid = try! db.run(alice.update(cFromUid <- FWCUser.getUid(),cReceiverUid <- model.userId,cMessageText <- message, cLastMessageTime <- timeStamp, cMessageContentType <- 1))
+        if isImage {
+            let rowid = try! db.run(alice.update(cFromUid <- FWCUser.getUid(),cReceiverUid <- model.userId,cMessageText <- "", cLastMessageTime <- timeStamp, cMessageContentType <- 2))
+        }else{
+            let rowid = try! db.run(alice.update(cFromUid <- FWCUser.getUid(),cReceiverUid <- model.userId,cMessageText <- message, cLastMessageTime <- timeStamp, cMessageContentType <- 1))
+        }
     }
 }
