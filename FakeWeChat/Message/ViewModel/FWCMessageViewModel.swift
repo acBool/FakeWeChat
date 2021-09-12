@@ -9,11 +9,15 @@ import UIKit
 
 class FWCMessageViewModel: NSObject {
     var dataSourceArray: [FWCChatModel] = []
+    typealias selectBlock = (_ row: Int) ->Void
+    var selectRowBlock: selectBlock?
 }
 
 extension FWCMessageViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if self.selectRowBlock != nil {
+            self.selectRowBlock!(indexPath.row)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

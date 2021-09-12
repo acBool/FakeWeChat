@@ -33,6 +33,10 @@
 		F0E0040626ED913D00EA6FA1 /* FWCMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */; };
 		F0E0040926EDC40700EA6FA1 /* FWCMessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040826EDC40700EA6FA1 /* FWCMessageDetailViewController.swift */; };
 		F0E0040B26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040A26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift */; };
+		F0E0040D26EDD40F00EA6FA1 /* FWCMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040C26EDD40F00EA6FA1 /* FWCMessageDetailView.swift */; };
+		F0E0040F26EDD43100EA6FA1 /* FWCMessageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0040E26EDD43100EA6FA1 /* FWCMessageDetailViewModel.swift */; };
+		F0E0041126EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */; };
+		F0E0041326EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageViewModel.swift; sourceTree = "<group>"; };
 		F0E0040826EDC40700EA6FA1 /* FWCMessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailViewController.swift; sourceTree = "<group>"; };
 		F0E0040A26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailBaseCell.swift; sourceTree = "<group>"; };
+		F0E0040C26EDD40F00EA6FA1 /* FWCMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailView.swift; sourceTree = "<group>"; };
+		F0E0040E26EDD43100EA6FA1 /* FWCMessageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailViewModel.swift; sourceTree = "<group>"; };
+		F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailTextCell.swift; sourceTree = "<group>"; };
+		F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWCMessageDetailImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +266,7 @@
 			children = (
 				F0E0040726EDAC2D00EA6FA1 /* CustomViews */,
 				F0E0040226ED8E9E00EA6FA1 /* FWCMessageView.swift */,
+				F0E0040C26EDD40F00EA6FA1 /* FWCMessageDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */,
+				F0E0040E26EDD43100EA6FA1 /* FWCMessageDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -359,6 +369,8 @@
 			children = (
 				F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */,
 				F0E0040A26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift */,
+				F0E0041026EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift */,
+				F0E0041226EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -528,16 +540,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E0040B26EDC44E00EA6FA1 /* FWCMessageDetailBaseCell.swift in Sources */,
+				F0E0041126EDD61700EA6FA1 /* FWCMessageDetailTextCell.swift in Sources */,
 				F0593B3826EC807F00A735C8 /* FWCTabBarController.swift in Sources */,
 				F0593B5B26EC946B00A735C8 /* FWCUtilities.swift in Sources */,
 				F0E0040326ED8E9E00EA6FA1 /* FWCMessageView.swift in Sources */,
 				F0593B0B26EC55A300A735C8 /* ViewController.swift in Sources */,
 				F0593B5626EC87AA00A735C8 /* FWCDiscoveryViewController.swift in Sources */,
+				F0E0040D26EDD40F00EA6FA1 /* FWCMessageDetailView.swift in Sources */,
 				F0E0040926EDC40700EA6FA1 /* FWCMessageDetailViewController.swift in Sources */,
 				F0593B5426EC878C00A735C8 /* FWCContactViewController.swift in Sources */,
 				F0593B5D26EC9A3300A735C8 /* FWCMessageListCell.swift in Sources */,
 				F0CC3DA626ECE93F00F700F9 /* FWCChatModel.swift in Sources */,
 				F0593B5F26ECA11F00A735C8 /* FWCMessageModel.swift in Sources */,
+				F0E0041326EDD63C00EA6FA1 /* FWCMessageDetailImageCell.swift in Sources */,
+				F0E0040F26EDD43100EA6FA1 /* FWCMessageDetailViewModel.swift in Sources */,
 				F0E0040626ED913D00EA6FA1 /* FWCMessageViewModel.swift in Sources */,
 				F0593B4026EC83A400A735C8 /* FWCStyle.swift in Sources */,
 				F0CC3DA826ECED1000F700F9 /* FWCSqlTool.swift in Sources */,

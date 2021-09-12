@@ -11,6 +11,13 @@ class FWCMessageViewController: FWCBaseViewController {
 
     lazy var viewModel: FWCMessageViewModel = {
         let viewModel = FWCMessageViewModel()
+        viewModel.selectRowBlock = {[unowned self] (row: Int) in
+            let model: FWCChatModel = self.viewModel.dataSourceArray[row]
+            let detailVC = FWCMessageDetailViewController(model:model)
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
         return viewModel
     }()
     
