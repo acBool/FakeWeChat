@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ZLPhotoBrowser
 
 class FWCMessageDetailViewController: FWCBaseViewController {
 
@@ -51,6 +52,7 @@ extension FWCMessageDetailViewController {
         self.specView.tableView.dataSource = self.viewModel
         self.specView.tableView.delegate = self.viewModel
         self.specView.actionView.textView.delegate = self
+        self.specView.actionView.actionBtn.addTarget(self, action: #selector(openAlbum), for: .touchUpInside)
         
         self.getMessageFromSql()
     }
@@ -82,6 +84,22 @@ extension FWCMessageDetailViewController {
         DispatchQueue.global().async {
             FWCSqlTool.shared.updateChatTable(message: message, model: self.chatModel)
         }
+    }
+}
+
+
+extension FWCMessageDetailViewController {
+    @objc func openAlbum() {
+        let configuration = ZLPhotoConfiguration()
+        configuration.maxSelectCount = 1
+        let ac = ZLPhotoPreviewSheet()
+        
+        ac.selectImageBlock = { [weak self] (images, assets, isOriginal) in
+            // your code
+            print(images)
+        }
+        ac.showPhotoLibrary(sender: self)
+        
     }
 }
 

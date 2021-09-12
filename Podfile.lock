@@ -32,6 +32,9 @@ PODS:
   - SwifterSwift/StoreKit (5.2.0)
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
+  - ZLPhotoBrowser (4.1.7):
+    - ZLPhotoBrowser/Core (= 4.1.7)
+  - ZLPhotoBrowser/Core (4.1.7)
 
 DEPENDENCIES:
   - AlamofireImage (~> 4.1)
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - PinLayout (~> 1.9.3)
   - SQLite.swift (~> 0.13.0)
   - SwifterSwift (~> 5.2.0)
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   trunk:
@@ -48,6 +52,7 @@ SPEC REPOS:
     - PinLayout
     - SQLite.swift
     - SwifterSwift
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -56,7 +61,8 @@ SPEC CHECKSUMS:
   PinLayout: 0d73cf5bea456b8112429c984de377839b9ec34c
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  ZLPhotoBrowser: 8ea81aa5cbaaf8b97bf8830fed1b1f756a5e8894
 
-PODFILE CHECKSUM: 1d0ca4b73f66a45df5668088bf74972ec011c0ed
+PODFILE CHECKSUM: 528d4f965ff00ed9e2d0aac45dc3cf2fa51c86d0
 
 COCOAPODS: 1.10.2

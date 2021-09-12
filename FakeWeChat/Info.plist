@@ -62,5 +62,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>FakeWeChat 需要访问您的相机</string>
+    <key>NSContactsUsageDescription</key>
+    <string>FakeWeChat 需要访问您的通讯录</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>FakeWeChat 需要访问您的相册</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>FakeWeChat 需要访问您的麦克风</string>
 </dict>
 </plist>
