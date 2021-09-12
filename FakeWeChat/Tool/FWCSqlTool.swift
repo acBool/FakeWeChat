@@ -101,34 +101,34 @@ class FWCSqlTool {
         let chatList = Array(result)
         if chatList.count == 0 {
             print("chat is empty")
-            var insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 101,cNickName <- "钱先生",cAvatarUrl <- "钱二二",cMessageText <- "这是最新的消息",cMessageContentType <- 1,cLastMessageTime <- 1631377073)
+            var insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 101,cNickName <- "钱先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",cMessageText <- "这是最新的消息",cMessageContentType <- 1,cLastMessageTime <- 1631377073)
             var rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 102, cReceiverUid <- 100,cNickName <- "孙先生",cAvatarUrl <- "钱二二",cMessageText <- "你好，我是老孙",cMessageContentType <- 1,cLastMessageTime <- 1631378073)
+            insert = chatTable.insert(cFromUid <- 102, cReceiverUid <- 100,cNickName <- "孙先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/2_head@2x.png?raw=true",cMessageText <- "你好，我是老孙",cMessageContentType <- 1,cLastMessageTime <- 1631378073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 103, cReceiverUid <- 100,cNickName <- "李先生",cAvatarUrl <- "钱二二",cMessageText <- "你好，我是老李",cMessageContentType <- 1,cLastMessageTime <- 1631379073)
+            insert = chatTable.insert(cFromUid <- 103, cReceiverUid <- 100,cNickName <- "李先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/3_head@2x.png?raw=true",cMessageText <- "你好，我是老李",cMessageContentType <- 1,cLastMessageTime <- 1631379073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 104, cReceiverUid <- 100,cNickName <- "周女士",cAvatarUrl <- "钱二二",cMessageText <- "你好，我是周女士",cMessageContentType <- 1,cLastMessageTime <- 1631380073)
+            insert = chatTable.insert(cFromUid <- 104, cReceiverUid <- 100,cNickName <- "周女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/4_head@2x.png?raw=true",cMessageText <- "你好，我是周女士",cMessageContentType <- 1,cLastMessageTime <- 1631380073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 105,cNickName <- "吴女士",cAvatarUrl <- "钱二二",cMessageText <- "你好，我是赵先生",cMessageContentType <- 1,cLastMessageTime <- 1631381073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 105,cNickName <- "吴女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/5_head@2x.png?raw=true",cMessageText <- "你好，我是赵先生",cMessageContentType <- 1,cLastMessageTime <- 1631381073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 106, cReceiverUid <- 100,cNickName <- "郑女士",cAvatarUrl <- "钱二二",cMessageText <- "你好，我是美丽善良的郑女士",cMessageContentType <- 1,cLastMessageTime <- 1631382073)
+            insert = chatTable.insert(cFromUid <- 106, cReceiverUid <- 100,cNickName <- "郑女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/6_head@2x.png?raw=true",cMessageText <- "你好，我是美丽善良的郑女士",cMessageContentType <- 1,cLastMessageTime <- 1631382073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 107,cNickName <- "王女士",cAvatarUrl <- "钱二二",cMessageText <- "美丽善良的王女士，你好啊",cMessageContentType <- 1,cLastMessageTime <- 1631383073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 107,cNickName <- "王女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/7_head@2x.png?raw=true",cMessageText <- "美丽善良的王女士，你好啊",cMessageContentType <- 1,cLastMessageTime <- 1631383073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 108, cReceiverUid <- 100,cNickName <- "冯先生",cAvatarUrl <- "钱二二",cMessageText <- "我是上海滩冯先生",cMessageContentType <- 1,cLastMessageTime <- 1631384073)
+            insert = chatTable.insert(cFromUid <- 108, cReceiverUid <- 100,cNickName <- "冯先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/8_head@2x.png?raw=true",cMessageText <- "我是上海滩冯先生",cMessageContentType <- 1,cLastMessageTime <- 1631384073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 109,cNickName <- "陈女士",cAvatarUrl <- "钱二二",cMessageText <- "陈女士，你好，我是老赵",cMessageContentType <- 1,cLastMessageTime <- 1631385073)
+            insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 109,cNickName <- "陈女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/9_head@2x.png?raw=true",cMessageText <- "陈女士，你好，我是老赵",cMessageContentType <- 1,cLastMessageTime <- 1631385073)
             rowid = try! db.run(insert)
             
-            insert = chatTable.insert(cFromUid <- 110, cReceiverUid <- 100,cNickName <- "金女士",cAvatarUrl <- "钱二二",cMessageText <- "我是小金",cMessageContentType <- 1,cLastMessageTime <- 1631386073)
+            insert = chatTable.insert(cFromUid <- 110, cReceiverUid <- 100,cNickName <- "金女士",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/10_head@2x.png?raw=true",cMessageText <- "我是小金",cMessageContentType <- 1,cLastMessageTime <- 1631386073)
             rowid = try! db.run(insert)
         }
     }

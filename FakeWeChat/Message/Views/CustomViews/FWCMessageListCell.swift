@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FWCMessageListCell: UITableViewCell {
 
@@ -27,9 +28,9 @@ class FWCMessageListCell: UITableViewCell {
     lazy var messageLayer: CATextLayer = {
         let layer = CATextLayer()
         layer.backgroundColor = FWCStyle.shared.mainBgColor().cgColor
-        layer.foregroundColor = FWCStyle.shared.messageListNameColor().cgColor
+        layer.foregroundColor = FWCStyle.shared.messageListTextColor().cgColor
         layer.alignmentMode = .left
-        layer.fontSize = RFS(12.0)
+        layer.fontSize = RFS(11.0)
         return layer
     }()
     
@@ -37,8 +38,8 @@ class FWCMessageListCell: UITableViewCell {
     lazy var dateLayer: CATextLayer = {
         let layer = CATextLayer()
         layer.backgroundColor = FWCStyle.shared.mainBgColor().cgColor
-        layer.foregroundColor = FWCStyle.shared.messageListNameColor().cgColor
-        layer.alignmentMode = .left
+        layer.foregroundColor = FWCStyle.shared.messageListTextColor().cgColor
+        layer.alignmentMode = .right
         layer.fontSize = RFS(11.0)
         return layer
     }()
@@ -77,7 +78,25 @@ class FWCMessageListCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        headImageView.pin.left(RS(10)).top(RS(15)).width(RS(40)).height(RS(40))
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.layer.mask = shapeLayer
         
+        nickNameLayer.frame = CGRect(x: RS(60), y: RS(15), width: RS(200), height: RS(20))
+        messageLayer.frame = CGRect(x: RS(60), y: nickNameLayer.frame.maxY + RS(2), width: RS(300), height: RS(15))
+        dateLayer.frame = CGRect(x: ScreenWidth - RS(130), y: RS(15), width: RS(120), height: RS(15))
+        spaceView.pin.left(RS(60)).right().bottom(0.5).height(0.5)
     }
     
+}
+
+extension FWCMessageListCell {
+    func bindData(model: FWCChatModel) {
+        self.nickNameLayer.string = model.nickName
+        self.messageLayer.string = model.messageText
+        self.dateLayer.string = formatMessageTime(messageTime:Int(model.lastMessageTime))
+        if model.avatarUrl.count > 0 {
+            headImageView.af.setImage(withURL: URL(string: model.avatarUrl)!)
+        }
+    }
 }

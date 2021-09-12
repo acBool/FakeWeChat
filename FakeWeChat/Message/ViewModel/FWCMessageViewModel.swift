@@ -21,6 +21,15 @@ extension FWCMessageViewModel: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row < self.dataSourceArray.count {
+            let model: FWCChatModel = dataSourceArray[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FWCMessageListCell") as? FWCMessageListCell
+            if cell == nil {
+                return FWCMessageListCell(style: .default, reuseIdentifier: "FWCMessageListCell")
+            }
+            cell?.bindData(model: model)
+            return cell!
+        }
         return UITableViewCell()
     }
 }

@@ -8,5 +8,6 @@ target 'FakeWeChat' do
   pod 'PinLayout', '~> 1.9.3'
   pod 'HandyJSON', '~> 5.0.2'
   pod 'SQLite.swift', '~> 0.13.0'
+  pod 'AlamofireImage', '~> 4.1'
 
 end

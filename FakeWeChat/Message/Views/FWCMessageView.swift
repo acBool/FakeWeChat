@@ -13,7 +13,7 @@ class FWCMessageView: UIView {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.separatorStyle = .none
         tableView.backgroundColor = FWCStyle.shared.mainBgColor()
-        tableView.rowHeight = RS(50)
+        tableView.rowHeight = RS(70)
         tableView.register(FWCMessageListCell.self, forCellReuseIdentifier: "FWCMessageListCell")
         return tableView
     }()

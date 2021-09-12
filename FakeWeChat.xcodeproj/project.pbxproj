@@ -251,7 +251,7 @@
 		F0593B4626EC86EB00A735C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */,
+				F0E0040726EDAC2D00EA6FA1 /* CustomViews */,
 				F0E0040226ED8E9E00EA6FA1 /* FWCMessageView.swift */,
 			);
 			path = Views;
@@ -347,6 +347,14 @@
 				F0E0040526ED913D00EA6FA1 /* FWCMessageViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0E0040726EDAC2D00EA6FA1 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F0593B5C26EC9A3300A735C8 /* FWCMessageListCell.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		F670F064949E93A540C8D081 /* Frameworks */ = {

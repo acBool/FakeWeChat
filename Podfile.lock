@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (5.4.3)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
   - HandyJSON (5.0.2)
   - PinLayout (1.9.4)
   - SQLite.swift (0.13.0):
@@ -31,6 +34,7 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 4.1)
   - HandyJSON (~> 5.0.2)
   - PinLayout (~> 1.9.3)
   - SQLite.swift (~> 0.13.0)
@@ -38,17 +42,21 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireImage
     - HandyJSON
     - PinLayout
     - SQLite.swift
     - SwifterSwift
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   PinLayout: 0d73cf5bea456b8112429c984de377839b9ec34c
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: 5e703eae613c10b924b71f4396f601840e032f94
+PODFILE CHECKSUM: 1d0ca4b73f66a45df5668088bf74972ec011c0ed
 
 COCOAPODS: 1.10.2

@@ -31,8 +31,12 @@ class FWCStyle {
         return UIColor(hex: 0x222222)!
     }
     
+    func messageListTextColor() -> UIColor {
+        return UIColor(hex: 0x8a8a8a)!
+    }
+    
     func messageSpaceLineColor() -> UIColor {
-        return UIColor(hex: 0xcccccc)!
+        return UIColor(hex: 0xeeeeee)!
     }
     
 }
