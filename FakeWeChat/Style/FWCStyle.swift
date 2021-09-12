@@ -116,6 +116,10 @@ extension FWCStyle {
     func meTabbarTitle() -> String {
         return "我"
     }
+    
+    func picMessageInfo() -> String {
+        return "[图片]"
+    }
 }
 
 

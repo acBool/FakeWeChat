@@ -100,7 +100,7 @@ extension FWCMessageListCell {
         if model.messageContentType == .Text {
             self.messageLayer.string = model.messageText
         }else {
-            self.messageLayer.string = "[图片]"
+            self.messageLayer.string = FWCStyle.shared.picMessageInfo()
         }
     }
 }
