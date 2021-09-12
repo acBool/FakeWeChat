@@ -39,6 +39,13 @@ class FWCStyle {
         return UIColor(hex: 0xeeeeee)!
     }
     
+    func messageDetailTextColor() -> UIColor {
+        return UIColor(hex: 0x222222)!
+    }
+    
+    func messageDetailBgColor() -> UIColor {
+        return UIColor(hex: 0xf3f3f3)!
+    }
 }
 
 

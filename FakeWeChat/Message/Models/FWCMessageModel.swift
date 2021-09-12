@@ -43,3 +43,25 @@ class FWCMessageModel: HandyJSON {
     
     required init() {}
 }
+
+extension FWCMessageModel {
+    static func createModel(dict: [String: Any]) -> FWCMessageModel {
+        let model = FWCMessageModel()
+        model.messageText = dict["messageText"] as! String
+        model.messageTime = dict["messageTime"] as! Int64
+        model.fromUid = dict["fromUid"] as! Int64
+        model.receiverUid = dict["receiverUid"] as! Int64
+        model.fromUserName = dict["fromUserName"] as! String
+        model.receiverUserName = dict["receiverUserName"] as! String
+        model.fromUserAvatarUrl = dict["fromUserAvatarUrl"] as! String
+        model.receiverUserAvatarUrl = dict["receiverUserAvatarUrl"] as! String
+        model.chatSessionId = dict["chatSessionId"] as! Int64
+        let type: Int = dict["messageContentType"] as! Int
+        if type == 1 {
+            model.messageContentType = .Text
+        }else{
+            model.messageContentType = .Image
+        }
+        return model
+    }
+}

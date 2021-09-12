@@ -12,7 +12,7 @@ class FWCMessageDetailView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.separatorStyle = .none
-        tableView.backgroundColor = FWCStyle.shared.mainBgColor()
+        tableView.backgroundColor = FWCStyle.shared.messageDetailBgColor()
         tableView.register(FWCMessageDetailTextCell.self, forCellReuseIdentifier: "FWCMessageDetailTextCell")
         tableView.register(FWCMessageDetailImageCell.self, forCellReuseIdentifier: "FWCMessageDetailImageCell")
         return tableView

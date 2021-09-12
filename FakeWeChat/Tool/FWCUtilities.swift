@@ -50,3 +50,10 @@ func formatMessageTime(messageTime: Int) -> String {
         return String(messageDate.year) + "-" + String(format:"%02x" ,messageDate.month) + "-" + String(format:"%02x" ,messageDate.day) + " " + String(format:"%02x" ,messageDate.hour) + ":" + String(format:"%02x" ,messageDate.minute)
     }
 }
+
+
+func calculateContentSize(content: String) -> (width: CGFloat, height: CGFloat){
+    let maxWidth = ScreenWidth - RS(100)
+    let size = content.boundingRect(with: CGSize(width: maxWidth, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14.0)], context: nil).size
+    return (width: size.width.ceil + RS(10), height: size.height.ceil + RS(10))
+}

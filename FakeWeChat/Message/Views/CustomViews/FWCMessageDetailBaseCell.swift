@@ -30,6 +30,7 @@ class FWCMessageDetailBaseCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.contentView.addSubview(headImageView)
+        self.backgroundColor = FWCStyle.shared.messageDetailBgColor()
     }
     
     required init?(coder: NSCoder) {

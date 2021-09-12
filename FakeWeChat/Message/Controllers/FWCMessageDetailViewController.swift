@@ -17,7 +17,7 @@ class FWCMessageDetailViewController: FWCBaseViewController {
     
     lazy var specView: FWCMessageDetailView = {
         let view = FWCMessageDetailView()
-        view.backgroundColor = FWCStyle.shared.mainBgColor()
+        view.backgroundColor = FWCStyle.shared.messageDetailBgColor()
         return view
     }()
         
@@ -36,7 +36,7 @@ class FWCMessageDetailViewController: FWCBaseViewController {
         // Do any additional setup after loading the view.
         self.title = self.chatModel.nickName
         self.setupUI()
-        self.hidesBottomBarWhenPushed = true
+        self.setupData()
     }
     
 }
@@ -45,5 +45,25 @@ extension FWCMessageDetailViewController {
     func setupUI() {
         specView.frame = self.view.bounds
         self.view.addSubview(specView)
+    }
+    
+    func setupData() {
+        self.specView.tableView.dataSource = self.viewModel
+        self.specView.tableView.delegate = self.viewModel
+        
+        DispatchQueue.global().async {
+            var dataSourceArray: [FWCMessageModel] = []
+            FWCSqlTool.shared.getMessageModelFromSql(chatId: self.chatModel.chatSessionId, dataSourceArray: &dataSourceArray)
+            if dataSourceArray.count > 0 {
+                self.viewModel.dataSourceArray = dataSourceArray
+                self.refreshMessageData()
+            }
+        }
+    }
+    
+    func refreshMessageData() {
+        DispatchQueue.main.async {
+            self.specView.tableView.reloadData()
+        }
     }
 }

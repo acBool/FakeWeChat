@@ -209,12 +209,37 @@ extension FWCSqlTool {
                 addKeyValueToDict(key: "messageContentType", value: chat[cMessageContentType], dict: &dict)
                 addKeyValueToDict(key: "chatSessionId", value: chat[cChatSessionId], dict: &dict)
                 addKeyValueToDict(key: "lastMessageTime", value: chat[cLastMessageTime], dict: &dict)
-                print(dict)
+                //print(dict)
                 let chatModel = FWCChatModel.createModel(dict: dict)
                 dataSourceArray.append(chatModel)
             }
         }catch {
             
+        }
+    }
+    
+    
+    func getMessageModelFromSql(chatId: Int64, dataSourceArray: inout [FWCMessageModel]) {
+        let messageTable = Table("messageTable").filter(mChatSessionId == chatId).order(mMessageTime)
+        do {
+            for message in try db.prepare(messageTable) {
+                var dict: [String: Any] = [:]
+                addKeyValueToDict(key: "fromUid", value: message[mFromUid], dict: &dict)
+                addKeyValueToDict(key: "receiverUid", value: message[mReceiverUid], dict: &dict)
+                addKeyValueToDict(key: "fromUserName", value: message[mFromUserName], dict: &dict)
+                addKeyValueToDict(key: "receiverUserName", value: message[mReceiverUserName], dict: &dict)
+                addKeyValueToDict(key: "fromUserAvatarUrl", value: message[mFromUserAvatarUrl], dict: &dict)
+                addKeyValueToDict(key: "receiverUserAvatarUrl", value: message[mReceiverUserAvatarUrl], dict: &dict)
+                addKeyValueToDict(key: "messageText", value: message[mMessageText], dict: &dict)
+                addKeyValueToDict(key: "messageContentType", value: message[mMessageContentType], dict: &dict)
+                addKeyValueToDict(key: "messageTime", value: message[mMessageTime], dict: &dict)
+                addKeyValueToDict(key: "chatSessionId", value: message[mChatSessionId], dict: &dict)
+                print(dict)
+                let messageModel = FWCMessageModel.createModel(dict: dict)
+                dataSourceArray.append(messageModel)
+            }
+        }catch {
+            print("error")
         }
     }
 }
