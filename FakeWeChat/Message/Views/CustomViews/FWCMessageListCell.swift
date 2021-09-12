@@ -78,8 +78,8 @@ class FWCMessageListCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        headImageView.pin.left(RS(10)).top(RS(15)).width(RS(40)).height(RS(40))
-        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.pin.left(kMarginSpace).top(RS(15)).width(kMessageListHeadWH).height(kMessageListHeadWH)
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
         nickNameLayer.frame = CGRect(x: RS(60), y: RS(15), width: RS(200), height: RS(20))

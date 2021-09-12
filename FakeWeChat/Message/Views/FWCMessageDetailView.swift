@@ -41,8 +41,8 @@ class FWCMessageDetailView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        tableView.pin.left().right().top().bottom(RS(70))
-        actionView.pin.left().right().bottom().height(RS(70))
+        tableView.pin.left().right().top().bottom(kMessageDetailActionHeight)
+        actionView.pin.left().right().bottom().height(kMessageDetailActionHeight)
     }
 
 }

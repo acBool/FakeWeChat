@@ -12,6 +12,14 @@ import PinLayout
 
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
+let kDefaultCellHeight = RS(50)
+let kMessageListCellHeight = RS(70)
+let kMessageDetailActionHeight = RS(70)
+let kMarginSpace = RS(10)
+let kMessageListHeadWH = RS(40)
+let kMessageDetailHeadWH = RS(30)
+let kRadiusCorner = RS(5)
+
 
 func RS(_ distance: CGFloat) -> CGFloat {
     return FWCStyle.shared.ratioDistanceSize(size: distance)
@@ -55,7 +63,7 @@ func formatMessageTime(messageTime: Int) -> String {
 func calculateContentSize(content: String) -> (width: CGFloat, height: CGFloat){
     let maxWidth = ScreenWidth - RS(100)
     let size = content.boundingRect(with: CGSize(width: maxWidth, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14.0)], context: nil).size
-    return (width: size.width.ceil + RS(10), height: size.height.ceil + RS(10))
+    return (width: size.width.ceil + kMarginSpace, height: size.height.ceil + kMarginSpace)
 }
 
 

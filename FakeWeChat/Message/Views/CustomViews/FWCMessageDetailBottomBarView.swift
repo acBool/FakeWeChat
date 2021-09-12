@@ -35,8 +35,8 @@ class FWCMessageDetailBottomBarView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.textView.pin.left(RS(15)).top(RS(10)).right(RS(60)).height(RS(40))
-        self.actionBtn.pin.top(RS(10)).right(RS(10)).width(RS(40)).height(RS(40))
+        self.textView.pin.left(RS(15)).top(kMarginSpace).right(RS(60)).height(kMessageListHeadWH)
+        self.actionBtn.pin.top(kMarginSpace).right(kMarginSpace).width(kMessageListHeadWH).height(kMessageListHeadWH)
     }
     
 }

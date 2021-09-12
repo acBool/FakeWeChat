@@ -63,30 +63,30 @@ class FWCMessageDetailTextCell: FWCMessageDetailBaseCell {
 extension FWCMessageDetailTextCell {
     // 右侧布局
     func layoutToRight(_ cellFrame: FWCDetailCellFrame) {
-        headImageView.frame = CGRect(x: ScreenWidth - RS(40), y: RS(10), width: RS(30), height: RS(30))
-        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.frame = CGRect(x: ScreenWidth - kMessageListHeadWH, y: kMarginSpace, width: kMessageDetailHeadWH, height: kMessageDetailHeadWH)
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
         let stretchImage = UIImage(named: "fwc_message_detail_sender_bg")!
         let bubbleImage = stretchImage.resizableImage(withCapInsets: UIEdgeInsets.init(top: 30, left: 28, bottom: 85, right: 28), resizingMode: .stretch)
         self.bgImageView.image = bubbleImage
-        self.bgImageView.frame = CGRect(x: ScreenWidth - RS(40) - RS(20) - cellFrame.width, y: RS(10), width: cellFrame.width + RS(10), height: cellFrame.height + RS(10))
+        self.bgImageView.frame = CGRect(x: ScreenWidth - kMessageListHeadWH - kMarginSpace * 2 - cellFrame.width, y: kMarginSpace, width: cellFrame.width + kMarginSpace, height: cellFrame.height + kMarginSpace)
         
-        contentLabel.frame = CGRect(x: RS(10), y:RS(5), width: cellFrame.width - RS(10), height: cellFrame.height - RS(10))
+        contentLabel.frame = CGRect(x: kMarginSpace, y:kRadiusCorner, width: cellFrame.width - kMarginSpace, height: cellFrame.height - kMarginSpace)
     }
     
     // 左侧布局
     func layoutToLeft(_ cellFrame: FWCDetailCellFrame) {
-        headImageView.frame = CGRect(x: RS(10), y: RS(10), width: RS(30), height: RS(30))
-        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.frame = CGRect(x: kMarginSpace, y: kMarginSpace, width: kMessageDetailHeadWH, height: kMessageDetailHeadWH)
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
         let stretchImage = UIImage(named: "fwc_message_datail_receiver_bg")!
         let bubbleImage = stretchImage.resizableImage(withCapInsets: UIEdgeInsets.init(top: 30, left: 28, bottom: 85, right: 28), resizingMode: .stretch)
         self.bgImageView.image = bubbleImage
-        self.bgImageView.frame = CGRect(x: RS(40) + RS(10), y: RS(10), width: cellFrame.width + RS(10), height: cellFrame.height + RS(10))
+        self.bgImageView.frame = CGRect(x: kMessageListHeadWH + kMarginSpace, y: kMarginSpace, width: cellFrame.width + kMarginSpace, height: cellFrame.height + kMarginSpace)
         
-        contentLabel.frame = CGRect(x: RS(10), y:RS(5), width: cellFrame.width - RS(10), height: cellFrame.height - RS(10))
+        contentLabel.frame = CGRect(x: kMarginSpace, y:kRadiusCorner, width: cellFrame.width - kMarginSpace, height: cellFrame.height - kMarginSpace)
     }
 }
 

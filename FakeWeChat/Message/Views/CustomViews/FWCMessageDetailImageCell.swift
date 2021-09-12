@@ -56,18 +56,18 @@ class FWCMessageDetailImageCell: FWCMessageDetailBaseCell {
 
 extension FWCMessageDetailImageCell {
     func layoutToRight(cellFrame: FWCDetailCellFrame, model: FWCMessageModel) {
-        headImageView.frame = CGRect(x: ScreenWidth - RS(40), y: RS(10), width: RS(30), height: RS(30))
-        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.frame = CGRect(x: ScreenWidth - kMessageListHeadWH, y: kMarginSpace, width: kMessageDetailHeadWH, height: kMessageDetailHeadWH)
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
-        messageImageView.frame = CGRect(x: ScreenWidth - RS(40) - RS(20) - CGFloat(model.imageWidth), y: RS(10), width: CGFloat(model.imageWidth), height: CGFloat(model.imageHeight))
+        messageImageView.frame = CGRect(x: ScreenWidth - kMessageListHeadWH - kMarginSpace * 2 - CGFloat(model.imageWidth), y: kMarginSpace, width: CGFloat(model.imageWidth), height: CGFloat(model.imageHeight))
     }
     
     func layoutToLeft(cellFrame: FWCDetailCellFrame, model: FWCMessageModel) {
-        headImageView.frame = CGRect(x: RS(10), y: RS(10), width: RS(30), height: RS(30))
-        let shapeLayer = cornerShapeLayer(view: headImageView, radius: RS(5))
+        headImageView.frame = CGRect(x: kMarginSpace, y: kMarginSpace, width: kMessageDetailHeadWH, height: kMessageDetailHeadWH)
+        let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
-        messageImageView.frame = CGRect(x: RS(40) + RS(10), y: RS(10), width: CGFloat(model.imageWidth), height: CGFloat(model.imageHeight))
+        messageImageView.frame = CGRect(x: kMessageListHeadWH + kMarginSpace, y: kMarginSpace, width: CGFloat(model.imageWidth), height: CGFloat(model.imageHeight))
     }
 }

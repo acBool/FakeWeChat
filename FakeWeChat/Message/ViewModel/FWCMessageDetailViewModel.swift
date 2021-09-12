@@ -28,10 +28,10 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
         if indexPath.row < cellFrameArray.count {
             let cellFrame: FWCDetailCellFrame = cellFrameArray[indexPath.row]
             if cellFrame.height > 0 {
-                return cellFrame.height + RS(20)
+                return cellFrame.height + kMarginSpace * 2
             }
         }
-        return RS(50)
+        return kDefaultCellHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -41,12 +41,12 @@ extension FWCMessageDetailViewModel: UITableViewDelegate, UITableViewDataSource 
                 // 高度需要计算
                 let model: FWCMessageModel = dataSourceArray[indexPath.row]
                 calculateCellFrame(cellFrame: cellFrame, model: model)
-                return cellFrame.height + RS(20)
+                return cellFrame.height + kMarginSpace * 2
             }else{
-                return cellFrame.height + RS(20)
+                return cellFrame.height + kMarginSpace * 2
             }
         }
-        return RS(50)
+        return kDefaultCellHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,11 +77,11 @@ extension FWCMessageDetailViewModel {
             // 文字
             let size = calculateContentSize(content: model.messageText)
             cellFrame.width = size.width
-            cellFrame.height = size.height > RS(50) ? size.height : RS(50)
+            cellFrame.height = size.height > kDefaultCellHeight ? size.height : kDefaultCellHeight
         }else{
             // 图片
             cellFrame.width = CGFloat(model.imageWidth)
-            cellFrame.height = CGFloat(model.imageHeight) > RS(50) ? CGFloat(model.imageHeight) : RS(50)
+            cellFrame.height = CGFloat(model.imageHeight) > kDefaultCellHeight ? CGFloat(model.imageHeight) : kDefaultCellHeight
         }
     }
     
