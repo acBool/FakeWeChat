@@ -19,6 +19,8 @@ let kMarginSpace = RS(10)
 let kMessageListHeadWH = RS(40)
 let kMessageDetailHeadWH = RS(30)
 let kRadiusCorner = RS(5)
+let kTopMarginSpace = RS(15)
+let kMessageListNameLeftMargin = RS(60)
 
 
 func RS(_ distance: CGFloat) -> CGFloat {

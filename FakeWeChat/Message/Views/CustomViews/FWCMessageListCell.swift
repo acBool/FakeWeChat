@@ -78,14 +78,14 @@ class FWCMessageListCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        headImageView.pin.left(kMarginSpace).top(RS(15)).width(kMessageListHeadWH).height(kMessageListHeadWH)
+        headImageView.pin.left(kMarginSpace).top(kTopMarginSpace).width(kMessageListHeadWH).height(kMessageListHeadWH)
         let shapeLayer = cornerShapeLayer(view: headImageView, radius: kRadiusCorner)
         headImageView.layer.mask = shapeLayer
         
-        nickNameLayer.frame = CGRect(x: RS(60), y: RS(15), width: RS(200), height: RS(20))
-        messageLayer.frame = CGRect(x: RS(60), y: nickNameLayer.frame.maxY + RS(2), width: RS(300), height: RS(15))
-        dateLayer.frame = CGRect(x: ScreenWidth - RS(130), y: RS(15), width: RS(120), height: RS(15))
-        spaceView.pin.left(RS(60)).right().bottom(0.5).height(0.5)
+        nickNameLayer.frame = CGRect(x: kMessageListNameLeftMargin, y: kTopMarginSpace, width: RS(200), height: RS(20))
+        messageLayer.frame = CGRect(x: kMessageListNameLeftMargin, y: nickNameLayer.frame.maxY + RS(2), width: RS(300), height: kTopMarginSpace)
+        dateLayer.frame = CGRect(x: ScreenWidth - RS(130), y: kTopMarginSpace, width: RS(120), height: kTopMarginSpace)
+        spaceView.pin.left(kMessageListNameLeftMargin).right().bottom(0.5).height(0.5)
     }
     
 }
