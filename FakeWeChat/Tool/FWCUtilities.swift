@@ -21,6 +21,8 @@ let kMessageDetailHeadWH = RS(30)
 let kRadiusCorner = RS(5)
 let kTopMarginSpace = RS(15)
 let kMessageListNameLeftMargin = RS(60)
+let kMaxPicWH: CGFloat = 200
+let kMaxPicDataLength = 1000 * 1000
 
 
 func RS(_ distance: CGFloat) -> CGFloat {
