@@ -12,7 +12,7 @@ class FWCMessageDetailBottomBarView: UIView {
     lazy var textView: UITextView = {
         let view = UITextView()
         view.textColor = FWCStyle.shared.messageDetailTextColor()
-        view.font = UIFont.systemFont(ofSize: 13)
+        view.font = FWCStyle.shared.messageDetailTextviewFont()
         view.returnKeyType = .send
         return view
     }()

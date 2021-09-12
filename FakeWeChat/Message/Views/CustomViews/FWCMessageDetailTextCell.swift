@@ -18,7 +18,7 @@ class FWCMessageDetailTextCell: FWCMessageDetailBaseCell {
         let label = UILabel()
         label.textColor = FWCStyle.shared.messageDetailTextColor()
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.font = FWCStyle.shared.messageDetailFont()
         return label
     }()
     

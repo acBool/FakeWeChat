@@ -120,6 +120,17 @@ extension FWCStyle {
 
 
 extension FWCStyle {
+    func messageDetailFont() -> UIFont {
+        return UIFont.systemFont(ofSize: 14.0)
+    }
+    
+    func messageDetailTextviewFont() -> UIFont {
+        return UIFont.systemFont(ofSize: 13.0)
+    }
+}
+
+
+extension FWCStyle {
     // distance
     
     func ratioDistanceSize(size: CGFloat) ->CGFloat {

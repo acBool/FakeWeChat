@@ -62,7 +62,7 @@ func formatMessageTime(messageTime: Int) -> String {
 
 func calculateContentSize(content: String) -> (width: CGFloat, height: CGFloat){
     let maxWidth = ScreenWidth - RS(100)
-    let size = content.boundingRect(with: CGSize(width: maxWidth, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14.0)], context: nil).size
+    let size = content.boundingRect(with: CGSize(width: maxWidth, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : FWCStyle.shared.messageDetailFont()], context: nil).size
     return (width: size.width.ceil + kMarginSpace, height: size.height.ceil + kMarginSpace)
 }
 
