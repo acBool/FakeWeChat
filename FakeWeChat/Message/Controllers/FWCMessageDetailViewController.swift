@@ -115,7 +115,6 @@ extension FWCMessageDetailViewController {
                     }
                 }
             }
-            print(images)
         }
         ac.showPhotoLibrary(sender: self)
         

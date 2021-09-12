@@ -64,7 +64,6 @@ class FWCSqlTool {
             table.column(cMessageText)
             table.column(cMessageContentType)
             table.column(cLastMessageTime)
-            print("create chatTable")
         }))
     }
     
@@ -86,7 +85,6 @@ class FWCSqlTool {
             table.column(mMessageImageData)
             table.column(mMessageImageWidth)
             table.column(mMessageImageHeight)
-            print("create messageTable")
         }))
     }
     
@@ -96,8 +94,6 @@ class FWCSqlTool {
         let result = try! db.prepare(messageTable)
         let messageList = Array(result)
         if messageList.count == 0 {
-            print("message is empty")
-            
             // 赵钱
             var insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 101,mFromUserName <- "赵先生",mReceiverUserName <- "钱先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mMessageText <- "这是第一次发消息",mMessageContentType <- 1,mMessageTime <- 1631370073,mChatSessionId <- 1,mMessageImageHeight <- 0,mMessageImageWidth <- 0,mMessageImageData <- Data())
             var rowid = try! db.run(insert)
@@ -161,7 +157,6 @@ class FWCSqlTool {
         let result = try! db.prepare(chatTable)
         let chatList = Array(result)
         if chatList.count == 0 {
-            print("chat is empty")
             var insert = chatTable.insert(cFromUid <- 100, cReceiverUid <- 101,cNickName <- "钱先生",cAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",cMessageText <- "这是最新的消息",cMessageContentType <- 1,cLastMessageTime <- 1631377073,cUserId <- 101)
             var rowid = try! db.run(insert)
             
