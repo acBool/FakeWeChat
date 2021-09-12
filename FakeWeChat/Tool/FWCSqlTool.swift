@@ -43,8 +43,8 @@ class FWCSqlTool {
         print("path = \(path)")
         self.createChatSessionTable()
         self.createMessageTable()
-        //self.initMessageTable()
         self.initChatTable()
+        self.initMessageTable()
     }
     
     
@@ -83,14 +83,68 @@ class FWCSqlTool {
         }))
     }
     
+    // 构造初始测试数据
     private func initMessageTable() {
         let messageTable = Table("messageTable")
         let result = try! db.prepare(messageTable)
         let messageList = Array(result)
         if messageList.count == 0 {
             print("message is empty")
-            let insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 101,mFromUserName <- "赵一一",mReceiverUserName <- "钱二二")
-            let rowid = try! db.run(insert)
+            
+            // 赵钱
+            var insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 101,mFromUserName <- "赵先生",mReceiverUserName <- "钱先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mMessageText <- "这是第一次发消息",mMessageContentType <- 1,mMessageTime <- 1631370073,mChatSessionId <- 1)
+            var rowid = try! db.run(insert)
+            
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 101,mFromUserName <- "赵先生",mReceiverUserName <- "钱先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mMessageText <- "继续向你发消息",mMessageContentType <- 1,mMessageTime <- 1631371073,mChatSessionId <- 1)
+            rowid = try! db.run(insert)
+            
+            insert = messageTable.insert(mFromUid <- 101, mReceiverUid <- 100,mFromUserName <- "钱先生",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "我已经收到了，不用再发了",mMessageContentType <- 1,mMessageTime <- 1631372073,mChatSessionId <- 1)
+            rowid = try! db.run(insert)
+            
+            insert = messageTable.insert(mFromUid <- 101, mReceiverUid <- 100,mFromUserName <- "钱先生",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，真的不用再发了，",mMessageContentType <- 1,mMessageTime <- 1631373073,mChatSessionId <- 1)
+            rowid = try! db.run(insert)
+            
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 101,mFromUserName <- "赵先生",mReceiverUserName <- "钱先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/1_head@2x.png?raw=true",mMessageText <- "这是最新的消息",mMessageContentType <- 1,mMessageTime <- 1631377073,mChatSessionId <- 1)
+            rowid = try! db.run(insert)
+            
+            // 赵孙
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 102,mFromUserName <- "赵先生",mReceiverUserName <- "孙先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/2_head@2x.png?raw=true",mMessageText <- "你好，我是老赵",mMessageContentType <- 1,mMessageTime <- 1631377073,mChatSessionId <- 2)
+            rowid = try! db.run(insert)
+            
+            insert = messageTable.insert(mFromUid <- 102, mReceiverUid <- 100,mFromUserName <- "孙先生",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/2_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "你好，我是老孙",mMessageContentType <- 1,mMessageTime <- 1631378073,mChatSessionId <- 2)
+            rowid = try! db.run(insert)
+            
+            // 赵李
+            insert = messageTable.insert(mFromUid <- 103, mReceiverUid <- 100,mFromUserName <- "李先生",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/3_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "你好，我是老李",mMessageContentType <- 1,mMessageTime <- 1631379073,mChatSessionId <- 3)
+            rowid = try! db.run(insert)
+            
+            // 赵周
+            insert = messageTable.insert(mFromUid <- 104, mReceiverUid <- 100,mFromUserName <- "周女士",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/4_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "你好，我是周女士",mMessageContentType <- 1,mMessageTime <- 1631380073,mChatSessionId <- 4)
+            rowid = try! db.run(insert)
+            
+            // 赵吴
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 105,mFromUserName <- "赵先生",mReceiverUserName <- "吴女士",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/5_head@2x.png?raw=true",mMessageText <- "你好，我是赵先生",mMessageContentType <- 1,mMessageTime <- 1631381073,mChatSessionId <- 5)
+            rowid = try! db.run(insert)
+            
+            // 赵郑
+            insert = messageTable.insert(mFromUid <- 106, mReceiverUid <- 100,mFromUserName <- "郑女士",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/6_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "你好，我是美丽善良的郑女士",mMessageContentType <- 1,mMessageTime <- 1631382073,mChatSessionId <- 6)
+            rowid = try! db.run(insert)
+            
+            // 赵王
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 107,mFromUserName <- "赵先生",mReceiverUserName <- "王女士",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/7_head@2x.png?raw=true",mMessageText <- "美丽善良的王女士，你好啊",mMessageContentType <- 1,mMessageTime <- 1631383073,mChatSessionId <- 7)
+            rowid = try! db.run(insert)
+            
+            // 赵冯
+            insert = messageTable.insert(mFromUid <- 108, mReceiverUid <- 100,mFromUserName <- "冯先生",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/8_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "我是上海滩冯先生",mMessageContentType <- 1,mMessageTime <- 1631384073,mChatSessionId <- 8)
+            rowid = try! db.run(insert)
+            
+            // 赵陈
+            insert = messageTable.insert(mFromUid <- 100, mReceiverUid <- 109,mFromUserName <- "赵先生",mReceiverUserName <- "陈女士",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/9_head@2x.png?raw=true",mMessageText <- "陈女士，你好，我是老赵",mMessageContentType <- 1,mMessageTime <- 1631385073,mChatSessionId <- 9)
+            rowid = try! db.run(insert)
+            
+            // 赵金
+            insert = messageTable.insert(mFromUid <- 110, mReceiverUid <- 100,mFromUserName <- "金女士",mReceiverUserName <- "赵先生",mFromUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/10_head@2x.png?raw=true",mReceiverUserAvatarUrl <- "https://github.com/acBool/picture/blob/master/202109/11_head@2x.png?raw=true",mMessageText <- "我是小金",mMessageContentType <- 1,mMessageTime <- 1631386073,mChatSessionId <- 10)
+            rowid = try! db.run(insert)
         }
     }
     
